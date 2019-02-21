@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EDENorteBDModelStoreContainer" CdmEntityContainer="EDENorteBDEntities">
+    <EntitySetMapping Name="Tbl_Facturas">
+      <EntityTypeMapping TypeName="EDENorteBDModel.Tbl_Facturas">
+        <MappingFragment StoreEntitySet="Tbl_Facturas">
+          <ScalarProperty Name="Contrato" ColumnName="Contrato" />
+          <ScalarProperty Name="Total_Pagar" ColumnName="Total_Pagar" />
+          <ScalarProperty Name="RNC_Cliente" ColumnName="RNC_Cliente" />
+          <ScalarProperty Name="Titular_De_Pago" ColumnName="Titular_De_Pago" />
+          <ScalarProperty Name="Direccion_Suministro" ColumnName="Direccion_Suministro" />
+          <ScalarProperty Name="Fecha_Emision" ColumnName="Fecha_Emision" />
+          <ScalarProperty Name="Valida_Hasta" ColumnName="Valida_Hasta" />
+          <ScalarProperty Name="Pague_Antes_De" ColumnName="Pague_Antes_De" />
+          <ScalarProperty Name="Ref_Pago" ColumnName="Ref_Pago" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Factura" ColumnName="Factura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

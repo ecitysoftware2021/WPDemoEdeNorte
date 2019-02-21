@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EDENorteBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Tbl_Facturas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Factura" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ref_Pago" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Pague_Antes_De" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Valida_Hasta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha_Emision" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Direccion_Suministro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Titular_De_Pago" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RNC_Cliente" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Total_Pagar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Contrato" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="EDENorteBDEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tbl_Facturas" EntityType="Self.Tbl_Facturas" />
+  </EntityContainer>
+</Schema>

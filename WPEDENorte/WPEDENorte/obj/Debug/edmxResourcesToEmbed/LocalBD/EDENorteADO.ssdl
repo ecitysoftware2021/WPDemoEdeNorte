@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EDENorteBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Tbl_Facturas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Factura" Type="nvarchar(max)" />
+    <Property Name="Ref_Pago" Type="nvarchar(max)" />
+    <Property Name="Pague_Antes_De" Type="nvarchar(max)" />
+    <Property Name="Valida_Hasta" Type="nvarchar(max)" />
+    <Property Name="Fecha_Emision" Type="nvarchar(max)" />
+    <Property Name="Direccion_Suministro" Type="nvarchar(max)" />
+    <Property Name="Titular_De_Pago" Type="nvarchar(max)" />
+    <Property Name="RNC_Cliente" Type="nvarchar(max)" />
+    <Property Name="Total_Pagar" Type="nvarchar(max)" />
+    <Property Name="Contrato" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="EDENorteBDModelStoreContainer">
+    <EntitySet Name="Tbl_Facturas" EntityType="Self.Tbl_Facturas" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

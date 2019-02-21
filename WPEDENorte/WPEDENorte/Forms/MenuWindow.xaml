@@ -1,0 +1,58 @@
+﻿<Window x:Class="WPEDENorte.Forms.MenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPEDENorte.Forms"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="MenuWindow" WindowStyle="None"
+        WindowState="Maximized"
+        Height="2064.095" 
+        Width="1250.599">
+    <Window.Background>
+        <ImageBrush ImageSource="../Images/Background/fondo.jpg"/>
+    </Window.Background>
+    <Grid Name="GrvPpal">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Source="/Images/Buttons/b-aceptar.png"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Top"
+               Grid.Column="4"
+               Name="BtnHome"
+               Width="250"
+               PreviewStylusDown="BtnHome_PreviewStylusDown"/>
+
+        <materialDesign:TransitioningContent  OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:1.2}" Visibility="Visible" Grid.Row="1">
+            <materialDesign:TransitioningContent.OpeningEffects>
+                <materialDesign:TransitionEffect Kind="ExpandIn" Duration="0:0:1.5"/>
+            </materialDesign:TransitioningContent.OpeningEffects>
+            <Image Source="../Images/Buttons/b-ACEPTAR.png"
+               VerticalAlignment="Top"
+               Name="BtnPayFactura"               
+               PreviewStylusDown="BtnPayFactura_PreviewStylusDown"
+               Width="750"
+               />
+        </materialDesign:TransitioningContent>
+
+        <materialDesign:TransitioningContent  OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:1.2}" Visibility="Visible" Grid.RowSpan="4">
+            <materialDesign:TransitioningContent.OpeningEffects>
+                <materialDesign:TransitionEffect Kind="ExpandIn"  Duration="0:0:1.5"/>
+            </materialDesign:TransitioningContent.OpeningEffects>
+            <Image Source="/Images/Buttons/b-aceptar.png"
+               Grid.Row="1"
+               Grid.RowSpan="2"
+               VerticalAlignment="Center"
+               Width="750"
+               Tag="2"/>
+        </materialDesign:TransitioningContent>
+    </Grid>
+</Window>
