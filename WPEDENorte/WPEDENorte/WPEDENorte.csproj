@@ -62,6 +62,9 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.0.1205, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.2.5.0.1205\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -93,6 +96,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\ControlPeripherals.cs" />
+    <Compile Include="Classes\DataPaypad.cs" />
+    <Compile Include="Classes\PaymentViewModel.cs" />
+    <Compile Include="Classes\RequestAuth.cs" />
+    <Compile Include="Classes\ResponseAuth.cs" />
+    <Compile Include="Classes\Uptake.cs" />
+    <Compile Include="Forms\PaySuccessfulWindow.xaml.cs">
+      <DependentUpon>PaySuccessfulWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Api.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CLSPrint.cs" />
@@ -194,6 +207,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Forms\PaySuccessfulWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\PayWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -252,6 +269,7 @@
     <Resource Include="Images\Keyboard\x.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\Others\Check.png" />
     <Content Include="LocalBD\EDENorteADO.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EDENorteADO.Context.cs</LastGenOutput>

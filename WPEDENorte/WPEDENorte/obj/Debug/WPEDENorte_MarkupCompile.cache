@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\1Cero1SAS\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\App.xaml
-8-1614641291
+9-68434756
 4329196325
-21-2034469254
-22-387097337
-Forms\ConfigurateWindow.xaml;Forms\DetailWindow.xaml;Forms\InitialWindow.xaml;Forms\MenuWindow.xaml;Forms\ModalWindow.xaml;Forms\PayWindow.xaml;Forms\SearchWindow.xaml;Keyboard\Generic.xaml;
+29-5360146
+23-866240472
+Forms\ConfigurateWindow.xaml;Forms\DetailWindow.xaml;Forms\InitialWindow.xaml;Forms\MenuWindow.xaml;Forms\ModalWindow.xaml;Forms\PaySuccessfulWindow.xaml;Forms\PayWindow.xaml;Forms\SearchWindow.xaml;Keyboard\Generic.xaml;
 
 False
 

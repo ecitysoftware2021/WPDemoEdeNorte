@@ -85,3 +85,8 @@ C:\Users\1Cero1SAS\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Deb
 C:\Users\1Cero1SAS\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\WPEDENorte.csproj.CopyComplete
 C:\Users\1Cero1SAS\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\WPEDENorte.exe
 C:\Users\1Cero1SAS\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\WPEDENorte.pdb
+C:\Users\1Cero1SAS\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\bin\Debug\Newtonsoft.Json.dll
+C:\Users\1Cero1SAS\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\1Cero1SAS\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\bin\Debug\Newtonsoft.Json.xml
+C:\Users\1Cero1SAS\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\Forms\PaySuccessfulWindow.g.cs
+C:\Users\1Cero1SAS\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\Forms\PaySuccessfulWindow.baml

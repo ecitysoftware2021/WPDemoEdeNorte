@@ -13,6 +13,25 @@ namespace WPEDENorte.Classes
 {
     public class Utilities
     {
+        #region "References"
+        public static string TOKEN { get; set; }
+        public static int Session { get; set; }
+        public static int CorrespondentId = 2;
+        public static ControlPeripherals control;
+        #endregion
+
+        public Utilities(int i)
+        {
+            try
+            {
+                control = new ControlPeripherals();
+                control.StopAceptance();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
         public Utilities()
         {
 
@@ -86,13 +105,13 @@ namespace WPEDENorte.Classes
         {
             try
             {
-                //CLSPrint objPrint = new CLSPrint();
+                CLSPrint objPrint = new CLSPrint();
 
-                //objPrint.FECHA_FACTURA = DateTime.Now.ToString("yyyy-MM-dd");
-                //objPrint.HORA_FACTURA = DateTime.Now.ToString("hh:mm:ss");
-                //objPrint.VALOR = String.Format("{0:C0}", 2000);
+                objPrint.Fecha = DateTime.Now.ToString("yyyy-MM-dd");
+                objPrint.Hora = DateTime.Now.ToString("hh:mm:ss");
+                objPrint.Valor = String.Format("{0:C0}", 2000);
 
-                //objPrint.ImprimirComprobante();
+                objPrint.ImprimirComprobante();
             }
             catch (Exception ex)
             {
@@ -112,7 +131,7 @@ namespace WPEDENorte.Classes
                     {
                         foreach (var type in types)
                         {
-                            if (reference == type.Factura)
+                            if (reference == type.Contrato)
                             {
                                 facturas.Direccion_Suministro = type.Direccion_Suministro;
                                 facturas.Factura = type.Factura;

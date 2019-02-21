@@ -9,6 +9,12 @@ namespace WPEDENorte.Classes
 {
     public class CLSPrint
     {
+        public string Fecha { get; set; }
+        public string Hora { get; set; }
+        public string ValorIngresado { get; set; }
+        public string ValorDevuelto { get; set; }
+        public string Valor { get; set; }
+
         private SolidBrush sb;
         private Font fTitles;
         private Font fGIBTitles;

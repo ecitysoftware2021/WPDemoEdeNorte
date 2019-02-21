@@ -4,9 +4,57 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPEDENorte.Forms"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
-        Title="ConfigurateWindow" Height="450" Width="800">
+        Title="ConfigurateWindow" WindowStyle="None"
+        WindowState="Maximized"
+        Height="2064.095"
+        Width="1250.599"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/Background/fondo.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150" />
+            <RowDefinition Height="350" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <TextBlock Text="CONFIGURACIÓN DEL DISPOSITIVO"
+                       FontFamily="Arial"
+                       FontSize="60"
+                       VerticalAlignment="Bottom"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,0"
+                       Foreground="#FF68B549"
+                       FontWeight="Bold"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+            <TextBlock Text="Espera mientras se configura el dispositivo para iniciar"
+                       FontFamily="Arial"
+                       FontSize="60"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Center"
+                       Margin="0,200,0,0"
+                       Foreground="#FF68B549"
+                       FontWeight="Bold"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       Width="900"/>
+            <Image gif:ImageBehavior.AnimatedSource="../Images/Gif/loading.gif" 
+                   gif:ImageBehavior.AnimateInDesignMode="True"
+                   gif:ImageBehavior.AutoStart="True" 
+                    x:Name="GifLoadder" 
+                    Stretch="Fill"
+                    Margin="0,0,0,0" 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" 
+                    Width="600" 
+                    Height="600"/>
+        </Grid>
     </Grid>
 </Window>
