@@ -14,6 +14,7 @@ namespace WPEDENorte.Forms
     {
         #region "References"
         private Utilities utilities;
+        private string num;
         #endregion
 
         #region "Constructor"
@@ -101,6 +102,8 @@ namespace WPEDENorte.Forms
                     gif.Visibility = Visibility.Visible;
                     btnConsultar.Visibility = Visibility.Hidden;
 
+                    num = TxtNumero.Text;
+
                     Task.Run(() =>
                     {
                         Consult();
@@ -121,7 +124,7 @@ namespace WPEDENorte.Forms
         {
             try
             {
-                var types = utilities.GetTypesConsult(TxtNumero.Text);
+                var types = utilities.GetTypesConsult(num);
 
                 if (types == null)
                 {
