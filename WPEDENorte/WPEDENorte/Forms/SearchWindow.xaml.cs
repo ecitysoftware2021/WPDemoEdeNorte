@@ -128,16 +128,26 @@ namespace WPEDENorte.Forms
 
                 if (types == null)
                 {
-                    GrvPpl.Opacity = 0.2;
-                    ModalWindow modal = new ModalWindow("No se encontrarón resultados de la factura");
-                    modal.ShowDialog();
-                    GrvPpl.Opacity = 1;
+                    Dispatcher.BeginInvoke((Action)delegate
+                    {
+                        gif.Visibility = Visibility.Hidden;
+                        btnConsultar.Visibility = Visibility.Visible;
+                        GrvPpl.Opacity = 0.2;
+                        ModalWindow modal = new ModalWindow("No se encontrarón resultados de la factura");
+                        modal.ShowDialog();
+                        GrvPpl.Opacity = 1;
+                    });
+                    GC.Collect();
                 }
                 else
                 {
-                    DetailWindow detail = new DetailWindow(types);
-                    detail.Show();
-                    this.Close();
+                    Dispatcher.BeginInvoke((Action)delegate
+                    {
+                        DetailWindow detail = new DetailWindow(types);
+                        detail.Show();
+                        this.Close();
+                    });
+                    GC.Collect();
                 }
             }
             catch (Exception ex)
