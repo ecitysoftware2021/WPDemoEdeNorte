@@ -66,6 +66,7 @@ namespace WPEDENorte.Forms
             try
             {
               ActivateWallet();
+              //SavePay();
             }
             catch (Exception ex)
             {

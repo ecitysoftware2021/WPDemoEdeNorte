@@ -56,8 +56,8 @@ namespace WPEDENorte.Classes
                 int sum = 30;
                 int x = 150;
 
-                string RutaIMG = GetConfiguration("LogoComprobante");
-                g.DrawImage(Image.FromFile(RutaIMG), y += sum + 20, 0);
+                //string RutaIMG = GetConfiguration("LogoComprobante");
+                //g.DrawImage(Image.FromFile(RutaIMG), y += sum + 20, 0);
 
                 g.DrawString("COMPROBANTE DE VENTA", fGIBTitles, sb, 25, y += sum);
                 g.DrawString("Nit xxx.xxx.xxx.x", fContent, sb, 95, y += sum);

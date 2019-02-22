@@ -30,7 +30,7 @@ namespace WPEDENorte.Services
                 conexion = new EDENorteBDEntities();
             }
 
-            basseAddress = Utilities.GetConfiguration(nameof(basseAddress));
+            basseAddress = Utilities.GetConfiguration("basseAddressLocal");
             client = new HttpClient();
             client.BaseAddress = new Uri(basseAddress);
             ReadKeys();
@@ -46,7 +46,7 @@ namespace WPEDENorte.Services
                 var request = JsonConvert.SerializeObject(requestAuth);
                 var content = new StringContent(request, Encoding.UTF8, "Application/json");
                 client = new HttpClient();
-                client.BaseAddress = new Uri(Utilities.GetConfiguration("basseAddress"));
+                client.BaseAddress = new Uri(Utilities.GetConfiguration("basseAddressLocal"));
                 var url = Utilities.GetConfiguration("GetToken");
                 var authentication = Encoding.ASCII.GetBytes(User4Told + ":" + Password4Told);
                 client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(authentication));
@@ -91,7 +91,7 @@ namespace WPEDENorte.Services
                 var request = JsonConvert.SerializeObject(model);
                 var content = new StringContent(request, Encoding.UTF8, "Application/json");
                 client = new HttpClient();
-                client.BaseAddress = new Uri(Utilities.GetConfiguration("basseAddress"));
+                client.BaseAddress = new Uri(Utilities.GetConfiguration("basseAddressLocal"));
                 var url = Utilities.GetConfiguration(controller);
                 var authentication = Encoding.ASCII.GetBytes(Utilities.TOKEN);
                 client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Utilities.TOKEN);
@@ -127,7 +127,7 @@ namespace WPEDENorte.Services
             try
             {
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                string[] text = File.ReadAllLines(string.Format(@"{0}\keys2.txt", path));
+                string[] text = File.ReadAllLines(string.Format(@"{0}\keys.txt", path));
                 if (text.Length > 0)
                 {
                     string[] line1 = text[0].Split(';');
