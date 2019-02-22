@@ -51,7 +51,7 @@
                    VerticalAlignment="Center"
                    FontSize="60"
                    Grid.Row="2"/>
-        <TextBlock Text="{Binding ValorIngresado, StringFormat={}{0:C0}}" 
+        <TextBlock Text="{Binding ValorIngresado}" 
                    Name="lblValorIngresado" 
                    FontFamily="pack://application:,,,/fonts/#Ubuntu"
                    Foreground="#606060"
@@ -69,7 +69,7 @@
                 VerticalAlignment="Center"
                 FontSize="60"
                 Grid.Row="2"/>
-        <TextBlock Text="{Binding ValorFaltante, StringFormat={}{0:C0}}"
+        <TextBlock Text="{Binding ValorFaltante}"
                    Name="lblFaltante"
                    FontFamily="pack://application:,,,/fonts/#Ubuntu"
                    Foreground="#606060"
@@ -86,7 +86,7 @@
                    VerticalAlignment="Center"
                    FontSize="60" 
                    Grid.Row="2"/>
-        <TextBlock Text="{Binding ValorSobrante, StringFormat={}{0:C0}}" 
+        <TextBlock Text="{Binding ValorSobrante}" 
                    Name="lblSobrante" 
                    FontFamily="pack://application:,,,/fonts/#Ubuntu"
                    Foreground="#606060"

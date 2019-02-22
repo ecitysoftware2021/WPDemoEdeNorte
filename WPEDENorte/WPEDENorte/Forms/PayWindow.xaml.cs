@@ -221,7 +221,8 @@ namespace WPEDENorte.Forms
         {
             try
             {
-                lblValorPagar.Content = string.Format("{0:C0}", Utilities.PayVal);
+                //lblValorPagar.Content = string.Format("{0:C0}", Utilities.PayVal);
+                lblValorPagar.Content = Convert.ToDecimal(String.Format("RDE {0:C0}", Utilities.PayVal).Replace("$", ""));
                 PaymentViewModel = new PaymentViewModel
                 {
                     PayValue = Utilities.PayVal,
