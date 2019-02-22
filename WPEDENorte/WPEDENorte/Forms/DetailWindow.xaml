@@ -290,7 +290,7 @@
                    Name="txtValor"
                    Grid.Column="1"
                    Grid.Row="10"
-                   Text="{Binding Valor, StringFormat={}{0:C0}}"
+                   Text="{Binding Valor}"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Top"
                    Margin="0,0,50,0" 

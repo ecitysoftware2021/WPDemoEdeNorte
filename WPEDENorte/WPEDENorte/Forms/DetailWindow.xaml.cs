@@ -23,6 +23,9 @@ namespace WPEDENorte.Forms
         public DetailWindow(Facturas datos)
         {
             InitializeComponent();
+
+            datos.Valor = String.Format("RDE {0:C0}", datos.Valor);
+            
             this.DataContext = datos;
         }
 

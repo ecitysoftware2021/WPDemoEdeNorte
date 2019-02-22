@@ -17,6 +17,6 @@ namespace WPEDENorte.Classes
         public string Direccion_Suministro { get; set; }
         public string Titular_De_Pago { get; set; }
         public string RNC_Cliente { get; set; }
-        public decimal Valor { get; set; }
+        public string Valor { get; set; }
     }
 }

@@ -195,7 +195,7 @@ namespace WPEDENorte.Classes
                                 facturas.RNC_Cliente = type.RNC_Cliente;
                                 facturas.Titular_De_Pago = type.Titular_De_Pago;
                                 facturas.Valida_Hasta = type.Valida_Hasta;
-                                facturas.Valor = Convert.ToDecimal(type.Total_Pagar);
+                                facturas.Valor = type.Total_Pagar;
                                 facturas.Contrato = type.Contrato;
 
                                 return facturas;
