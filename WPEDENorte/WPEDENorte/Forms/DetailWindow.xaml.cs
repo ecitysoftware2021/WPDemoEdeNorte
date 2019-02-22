@@ -24,9 +24,16 @@ namespace WPEDENorte.Forms
         {
             InitializeComponent();
 
-            datos.Valor = String.Format("RDE {0:C0}", datos.Valor);
-            
-            this.DataContext = datos;
+            try
+            {
+                datos.Valor = String.Format("RDE {0:C0}", Convert.ToDecimal(datos.Valor));
+                datos.Valor = datos.Valor.Replace("$", "");
+
+                this.DataContext = datos;
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
         #region "HeadersButtons"
@@ -67,7 +74,7 @@ namespace WPEDENorte.Forms
 
         private void BtnPagar_PreviewStylusDown(object sender, StylusDownEventArgs e)
         {
-            decimal valor = Convert.ToDecimal(txtValor.Text.Trim().Replace("$","").Replace(",", "").Replace(".", ""));
+            decimal valor = Convert.ToDecimal(txtValor.Text.Trim().Replace("RDE","").Replace(",", "").Replace(".", ""));
 
             PayWindow pay = new PayWindow(valor);
             pay.Show();
