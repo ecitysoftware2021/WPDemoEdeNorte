@@ -193,9 +193,12 @@ namespace WPEDENorte.Classes
                     ValorFaltante = (ValorIngresado < PayValue) ? PayValue - ValorIngresado : 0;
                     ValorSobrante = (ValorIngresado > PayValue) ? ValorIngresado - PayValue : 0;
 
-                    _valorIngresado = Convert.ToDecimal(String.Format("RDE {0:C0}", _valorIngresado).Replace("$", ""));
-                    ValorFaltante = Convert.ToDecimal(String.Format("RDE {0:C0}", ValorFaltante).Replace("$", ""));
-                    ValorSobrante = Convert.ToDecimal(String.Format("RDE {0:C0}", ValorSobrante).Replace("$", ""));
+                    //_valorIngresado = Convert.ToDecimal(String.Format("RDE {0:C0}", _valorIngresado).Replace("$", ""));
+                    string a = String.Format("RDE {0:C0}", _valorIngresado);
+                    _valorIngresado = Convert.ToDecimal(a.Replace("$", ""));
+
+                    //ValorFaltante = Convert.ToDecimal(String.Format("RDE {0:C0}", ValorFaltante).Replace("$", ""));
+                    //ValorSobrante = Convert.ToDecimal(String.Format("RDE {0:C0}", ValorSobrante).Replace("$", ""));
 
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ValorIngresado)));
                 }

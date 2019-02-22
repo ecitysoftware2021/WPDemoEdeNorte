@@ -54,7 +54,7 @@ namespace WPEDENorte.Forms
                 utilities = new Utilities();
                 count = 0;
                 stateUpdate = true;
-                //Utilities.control.StartValues();
+                Utilities.control.StartValues();
             }
             catch (Exception ex)
             {
@@ -65,7 +65,7 @@ namespace WPEDENorte.Forms
         {
             try
             {
-              //ActivateWallet();
+              ActivateWallet();
               //SavePay();
             }
             catch (Exception ex)
@@ -222,7 +222,9 @@ namespace WPEDENorte.Forms
             try
             {
                 //lblValorPagar.Content = string.Format("{0:C0}", Utilities.PayVal);
-                lblValorPagar.Content = Convert.ToDecimal(String.Format("RDE {0:C0}", Utilities.PayVal).Replace("$", ""));
+                string a = String.Format("RDE {0:C0}", Utilities.PayVal);
+                lblValorPagar.Text = a.Replace("$", "");
+
                 PaymentViewModel = new PaymentViewModel
                 {
                     PayValue = Utilities.PayVal,
