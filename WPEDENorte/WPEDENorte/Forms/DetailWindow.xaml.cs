@@ -61,5 +61,14 @@ namespace WPEDENorte.Forms
             }
         }
         #endregion
+
+        private void BtnPagar_PreviewStylusDown(object sender, StylusDownEventArgs e)
+        {
+            decimal valor = Convert.ToDecimal(txtValor.Text.Trim().Replace("$","").Replace(",", "").Replace(".", ""));
+
+            PayWindow pay = new PayWindow(valor);
+            pay.Show();
+            this.Close();
+        }
     }
 }

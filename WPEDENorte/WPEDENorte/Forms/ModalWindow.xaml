@@ -4,13 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPEDENorte.Forms"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
         Title="ModalWindow" WindowStyle="None"
         Background="Transparent"
         WindowStartupLocation="CenterScreen"
         AllowsTransparency="True"
         ShowInTaskbar="False" Topmost="True"
-        Height="450" Width="600">
+        Height="450" Width="600"
+        Loaded="Window_Loaded"
+        >
     <Border Background="#fff" 
             BorderBrush="#fff" 
             BorderThickness="2,2,2,2"
@@ -64,14 +67,26 @@
                     BorderThickness="4,2,2,2"
                     CornerRadius="0,0,30,30" Margin="0,4,-4,-4" Grid.ColumnSpan="2"
                     >
-                <Image HorizontalAlignment="Center" 
+                <Image 
+                       Name="btnAceptar"
+                       HorizontalAlignment="Center" 
                        Source="../Images/Buttons/b-aceptar.png" 
                        VerticalAlignment="Center"
                        Width="230"
                        Margin="0,0,0,0"
                        PreviewStylusDown="Image_PreviewStylusDown"
                        Stretch="Uniform"/>
+                
             </Border>
+            <Image gif:ImageBehavior.AnimatedSource="/Images/Gif/loading.gif"
+                       x:Name="Gif"
+                       HorizontalAlignment="Center"
+                       Height="90" 
+                       Margin="0,0,0,0"
+                       VerticalAlignment="Center"
+                       Visibility="Hidden" 
+                       Width="300"
+               />
         </Grid>
     </Border>
 </Window>

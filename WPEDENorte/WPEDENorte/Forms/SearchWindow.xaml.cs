@@ -93,7 +93,7 @@ namespace WPEDENorte.Forms
                 if (!ValidarCampo())
                 {
                     GrvPpl.Opacity = 0.2;
-                    ModalWindow modal = new ModalWindow("Debe de ingresar una factura");
+                    ModalWindow modal = new ModalWindow("Debe de ingresar una factura",false);
                     modal.ShowDialog();
                     GrvPpl.Opacity = 1;
                 }
@@ -133,7 +133,7 @@ namespace WPEDENorte.Forms
                         gif.Visibility = Visibility.Hidden;
                         btnConsultar.Visibility = Visibility.Visible;
                         GrvPpl.Opacity = 0.2;
-                        ModalWindow modal = new ModalWindow("No se encontrarón resultados de la factura");
+                        ModalWindow modal = new ModalWindow("No se encontrarón resultados de la factura",false);
                         modal.ShowDialog();
                         GrvPpl.Opacity = 1;
                     });

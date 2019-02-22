@@ -287,7 +287,7 @@
                    FontWeight="Bold"                   
                    Foreground="#606060"/>
                 <TextBlock 
-                   Name="xlddoxr"
+                   Name="txtValor"
                    Grid.Column="1"
                    Grid.Row="10"
                    Text="{Binding Valor, StringFormat={}{0:C0}}"
@@ -321,6 +321,7 @@
                    Height="140"
                    TabIndex="1"
                    Margin="0,0,0,0"
+                   PreviewStylusDown="BtnPagar_PreviewStylusDown"
                    >
                 <Button.Background>
                     <ImageBrush ImageSource="/Images/Buttons/b-aceptar.png" Stretch="Fill" />

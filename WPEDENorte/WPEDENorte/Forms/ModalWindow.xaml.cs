@@ -19,11 +19,15 @@ namespace WPEDENorte.Forms
     /// </summary>
     public partial class ModalWindow : Window
     {
+        private string mensaje;
+        private bool giff;
+
         #region "Constructor
-        public ModalWindow(string mensaje)
+        public ModalWindow(string mensaje, bool gif)
         {
             InitializeComponent();
-            LblMessage.Text = mensaje;
+            this.mensaje = mensaje;
+            this.giff = gif;
         }
         #endregion
 
@@ -39,5 +43,19 @@ namespace WPEDENorte.Forms
             }
         }
         #endregion
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(mensaje) && giff == true)
+            {
+                LblMessage.Text = "Se está procesando su solicitud, por favor espere un momento";
+                Gif.Visibility = Visibility.Visible;
+                btnAceptar.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                LblMessage.Text = mensaje;
+            }
+        }
     }
 }

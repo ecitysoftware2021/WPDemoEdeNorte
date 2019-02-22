@@ -95,7 +95,7 @@ namespace WPEDENorte.Forms
         {
             Dispatcher.BeginInvoke((Action)delegate
             {
-                ModalWindow modal = new ModalWindow(string.Concat("Lo sentimos,", Environment.NewLine, "el cajero no se encuentra disponible.\nError: ", description));
+                ModalWindow modal = new ModalWindow(string.Concat("Lo sentimos,", Environment.NewLine, "el cajero no se encuentra disponible.\nError: ", description),false);
                 modal.ShowDialog();
                 if (modal.DialogResult.HasValue)
                 {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -31,7 +32,10 @@ namespace WPEDENorte.Forms
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             utilities.ImprimirComprobante();
-            //thread...
+            Task.Run(() =>
+            {
+                Thread.Sleep(4000);
+            }).Wait();
             Utilities.GoToInicial();
         }
     }
