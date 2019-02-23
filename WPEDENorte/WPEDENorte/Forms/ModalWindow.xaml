@@ -39,7 +39,9 @@
                            HorizontalAlignment="Center" 
                            VerticalAlignment="Center" 
                            Text="Información" 
-                           FontSize="45" FontWeight="Bold" 
+                           FontSize="45" 
+                           FontWeight="Bold"
+                           Foreground="#FF1AA1DA"
                            Margin="0,25,0,0"
                                />
                 </Grid>
@@ -78,13 +80,14 @@
                        Stretch="Uniform"/>
                 
             </Border>
-            <Image gif:ImageBehavior.AnimatedSource="/Images/Gif/loading.gif"
+            <Image gif:ImageBehavior.AnimatedSource="/Images/Gif/gif-cargando.gif"
                        x:Name="Gif"
                        HorizontalAlignment="Center"
                        Height="90" 
                        Margin="0,0,0,0"
+                       Grid.Row="2"
                        VerticalAlignment="Center"
-                       Visibility="Hidden" 
+                       Visibility="Hidden"
                        Width="300"
                />
         </Grid>

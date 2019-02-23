@@ -242,9 +242,6 @@
     <Resource Include="Images\Buttons\x.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Buttons\b-Aceptar.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Background\fondo.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -270,6 +267,30 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Others\Check.png" />
+    <Resource Include="Images\Background\f-ecologica.jpg" />
+    <Resource Include="Images\Background\f-electricidad.jpg" />
+    <Resource Include="Images\Background\f-generico.png" />
+    <Resource Include="Images\Background\f-menu.jpg" />
+    <Resource Include="Images\Background\muestra-menu.jpg" />
+    <Resource Include="Images\Background\p-edenorte.jpg" />
+    <Resource Include="Images\Buttons\b-Aceptar.png" />
+    <Resource Include="Images\Buttons\b-Atras.png" />
+    <Resource Include="Images\Buttons\b-Cancelar-Pago.png" />
+    <Resource Include="Images\Buttons\b-Cancelar.png" />
+    <Resource Include="Images\Buttons\b-Consultar.png" />
+    <Resource Include="Images\Buttons\b-Deposite-el-Dinero.png" />
+    <Resource Include="Images\Buttons\b-ecologica.png" />
+    <Resource Include="Images\Buttons\b-electricidad.png" />
+    <Resource Include="Images\Buttons\b-Espere-su-Cambio.png" />
+    <Resource Include="Images\Buttons\b-Espere-su-Recibo.png" />
+    <Resource Include="Images\Buttons\b-Ingrese-Billete.png" />
+    <Resource Include="Images\Buttons\b-Leyendo-Billete.png" />
+    <Resource Include="Images\Buttons\b-Pagar-Efectivo.png" />
+    <Resource Include="Images\Buttons\b-Salir.png" />
+    <Resource Include="Images\Buttons\gif-ingrese-dinero.gif" />
+    <Resource Include="Images\Gif\gif-cargando.gif" />
+    <Resource Include="Images\Gif\gif-chulo.gif" />
+    <Resource Include="Images\Others\logo.png" />
     <Content Include="LocalBD\EDENorteADO.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EDENorteADO.Context.cs</LastGenOutput>

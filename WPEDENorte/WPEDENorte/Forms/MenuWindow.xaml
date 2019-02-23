@@ -11,7 +11,7 @@
         Height="2064.095" 
         Width="1250.599">
     <Window.Background>
-        <ImageBrush ImageSource="../Images/Background/fondo.jpg"/>
+        <ImageBrush ImageSource="../Images/Background/f-menu.jpg"/>
     </Window.Background>
     <Grid Name="GrvPpal">
         <Grid.ColumnDefinitions>
@@ -21,13 +21,13 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Image Source="/Images/Buttons/b-aceptar.png"
+        <Image Source="/Images/Buttons/b-salir.png"
                HorizontalAlignment="Right"
                VerticalAlignment="Top"
                Grid.Column="4"
                Name="BtnHome"
+               Margin="0,20,20,0"
                Width="250"
                PreviewStylusDown="BtnHome_PreviewStylusDown"/>
 
@@ -35,11 +35,13 @@
             <materialDesign:TransitioningContent.OpeningEffects>
                 <materialDesign:TransitionEffect Kind="ExpandIn" Duration="0:0:1.5"/>
             </materialDesign:TransitioningContent.OpeningEffects>
-            <Image Source="../Images/Buttons/b-ACEPTAR.png"
-               VerticalAlignment="Top"
+            <Image Source="../Images/Buttons/b-electricidad.png"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Left"
+               Margin="60,0,0,0"
                Name="BtnPayFactura"               
                PreviewStylusDown="BtnPayFactura_PreviewStylusDown"
-               Width="750"
+               Width="500"
                />
         </materialDesign:TransitioningContent>
 
@@ -47,12 +49,15 @@
             <materialDesign:TransitioningContent.OpeningEffects>
                 <materialDesign:TransitionEffect Kind="ExpandIn"  Duration="0:0:1.5"/>
             </materialDesign:TransitioningContent.OpeningEffects>
-            <Image Source="/Images/Buttons/b-aceptar.png"
+            <Image Source="/Images/Buttons/b-ecologica.png"
                Grid.Row="1"
                Grid.RowSpan="2"
                VerticalAlignment="Center"
-               Width="750"
-               Tag="2"/>
+               HorizontalAlignment="Right"
+               Margin="0,0,60,0"
+               Width="500"
+               PreviewStylusDown="Image_PreviewStylusDown"
+               />
         </materialDesign:TransitioningContent>
     </Grid>
 </Window>

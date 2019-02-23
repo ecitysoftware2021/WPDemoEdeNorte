@@ -14,7 +14,7 @@
         Loaded="Window_Loaded">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Images/Background/fondo.jpg"/>
+            <ImageBrush ImageSource="/Images/Background/f-generico.png"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="150" />
@@ -29,7 +29,7 @@
                        VerticalAlignment="Bottom"
                        HorizontalAlignment="Center"
                        Margin="0,0,0,0"
-                       Foreground="#FF68B549"
+                       Foreground="#FF1AA1DA"
                        FontWeight="Bold"/>
         </Grid>
 
@@ -40,12 +40,12 @@
                        VerticalAlignment="Top"
                        HorizontalAlignment="Center"
                        Margin="0,200,0,0"
-                       Foreground="#FF68B549"
+                       Foreground="#FF1AA1DA"
                        FontWeight="Bold"
                        TextWrapping="Wrap"
                        TextAlignment="Center"
                        Width="900"/>
-            <Image gif:ImageBehavior.AnimatedSource="../Images/Gif/loading.gif" 
+            <Image gif:ImageBehavior.AnimatedSource="../Images/Gif/gif-cargando.gif" 
                    gif:ImageBehavior.AnimateInDesignMode="True"
                    gif:ImageBehavior.AutoStart="True" 
                     x:Name="GifLoadder" 

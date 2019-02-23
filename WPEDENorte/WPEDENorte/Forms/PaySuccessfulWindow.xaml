@@ -12,7 +12,7 @@
         Loaded="Window_Loaded"
         >
     <Window.Background>
-        <ImageBrush ImageSource="../Images/Background/fondo.jpg"/>
+        <ImageBrush ImageSource="../Images/Background/f-generico.png"/>
     </Window.Background>
     <Grid Name="GrvPpal">
         <Grid.ColumnDefinitions>
@@ -23,7 +23,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Image Source="/Images/Buttons/b-aceptar.png"
+        <Image Source="/Images/Buttons/b-espere-su-recibo.png"
                HorizontalAlignment="Right"
                VerticalAlignment="Bottom"
                Grid.Row="0"

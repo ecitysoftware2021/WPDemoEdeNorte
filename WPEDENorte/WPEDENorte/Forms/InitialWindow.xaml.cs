@@ -93,8 +93,7 @@ namespace WPEDENorte.Forms
             {
                 return new List<string>
                 {
-                @"Images/Background/Publicidad-02.jpg",
-                @"Images/Background/Publicidad-03.jpg"
+                @"Images/Background/p-edenorte.jpg"
                 };
             }
             catch (Exception ex)

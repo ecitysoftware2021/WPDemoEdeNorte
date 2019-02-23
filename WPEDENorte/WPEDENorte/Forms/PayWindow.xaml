@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPEDENorte.Forms"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
         Title="PayWindow" Loaded="Window_Loaded"
         WindowState="Maximized"
@@ -12,7 +13,7 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen">
     <Window.Background>
-        <ImageBrush ImageSource="/Images/Background/fondo.jpg"/>
+        <ImageBrush ImageSource="/Images/Background/f-generico.png"/>
     </Window.Background>
     <Grid Name="PaymentGrid">
         <Grid.RowDefinitions>
@@ -51,7 +52,7 @@
                    VerticalAlignment="Center"
                    FontSize="60"
                    Grid.Row="2"/>
-        <TextBlock Text="{Binding ValorIngresado}" 
+        <TextBlock Text="{Binding ValorIngresado, StringFormat={}{0:C0}}" 
                    Name="lblValorIngresado" 
                    FontFamily="pack://application:,,,/fonts/#Ubuntu"
                    Foreground="#606060"
@@ -69,7 +70,7 @@
                 VerticalAlignment="Center"
                 FontSize="60"
                 Grid.Row="2"/>
-        <TextBlock Text="{Binding ValorFaltante}"
+        <TextBlock Text="{Binding ValorFaltante, StringFormat={}{0:C0}}" 
                    Name="lblFaltante"
                    FontFamily="pack://application:,,,/fonts/#Ubuntu"
                    Foreground="#606060"
@@ -86,7 +87,7 @@
                    VerticalAlignment="Center"
                    FontSize="60" 
                    Grid.Row="2"/>
-        <TextBlock Text="{Binding ValorSobrante}" 
+        <TextBlock Text="{Binding ValorSobrante, StringFormat={}{0:C0}}" 
                    Name="lblSobrante" 
                    FontFamily="pack://application:,,,/fonts/#Ubuntu"
                    Foreground="#606060"
@@ -100,36 +101,38 @@
                    VerticalAlignment="Top" 
                    Margin="100,0,0,0" 
                    Width="400"  
-                   Source="/Images/Buttons/b-aceptar.png"
+                   Source="/Images/Buttons/b-cancelar.png"
                    Grid.Row="3"
                    Visibility="{Binding ImgCancel}"
                    PreviewStylusDown="btnCancelar_PreviewStylusDown"/>
         <Image Visibility="{Binding ImgLeyendoBillete}" 
-               Source="/Images/Buttons/b-aceptar.png"
+               Source="/Images/Buttons/b-leyendo-billete.png"
                Name="imgLeyendoBillete"                
                Margin="0,0,100,0" 
                Width="400" 
                HorizontalAlignment="Right" 
                Grid.Row="3"                
                VerticalAlignment="Top"/>
-        <Image x:Name="btnCancelar_Copy"               
+        <Image  x:Name="btnCancelar_Copy"               
                 Visibility="{Binding ImgIngreseBillete}"                
-                Source="/Images/Buttons/b-aceptar.png"
+                gif:ImageBehavior.AnimatedSource="../Images/Buttons/gif-ingrese-dinero.gif" 
+                gif:ImageBehavior.AnimateInDesignMode="True"
+                gif:ImageBehavior.AutoStart="True"
                 Margin="0,0,100,0" 
-               Width="400" 
-               HorizontalAlignment="Right" 
-               Grid.Row="3"                
+                Width="400" 
+                HorizontalAlignment="Right" 
+                Grid.Row="3"                
                VerticalAlignment="Top"/>
         <Image x:Name="btnChange"               
                 Visibility="{Binding ImgEspereCambio}"                
-                Source="/Images/Buttons/b-aceptar.png"
+                Source="/Images/Buttons/b-espere-su-cambio.png"
                 Margin="0,0,100,0" 
                Width="400" 
                HorizontalAlignment="Right" 
                Grid.Row="3"                
                VerticalAlignment="Top"/>
         <Image Visibility="{Binding ImgRecibo}"
-               Source="/Images/Buttons/b-aceptar.png"
+               Source="/Images/Buttons/b-espere-su-recibo.png"
                    Name="imgEspereRecibo" 
                    Height="71" 
                    Margin="0,100,50,0" 

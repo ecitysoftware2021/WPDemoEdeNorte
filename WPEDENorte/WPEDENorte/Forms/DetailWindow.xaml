@@ -11,7 +11,7 @@
         Height="2064.095" 
         Width="1250.599">
     <Window.Background>
-        <ImageBrush ImageSource="../Images/Background/fondo.jpg"/>
+        <ImageBrush ImageSource="../Images/Background/f-generico.png"/>
     </Window.Background>
     <Grid x:Name="GrvPpl">
         <Grid.ColumnDefinitions>
@@ -20,35 +20,35 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="150" />
-            <RowDefinition Height="260" />
+            <RowDefinition Height="150" />
             <RowDefinition Height="*" />
             <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
         <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0">
             <Image x:Name="BtnExit"
-                   Source="../Images/Buttons/b-aceptar.png"
+                   Source="../Images/Buttons/b-salir.png"
                    Grid.Column="0"
                    HorizontalAlignment="Right" 
                    VerticalAlignment="Top" 
                    Width="200"
                    Height="80" 
-                   Margin="0,20,25,0"
+                   Margin="0,20,20,0"
                    Stretch="Uniform"
                    PreviewStylusDown="BtnExit_PreviewStylusDown"
                    />
             <Image x:Name="BtnBack"
-                   Source="../Images/Buttons/b-aceptar.png"
+                   Source="../Images/Buttons/b-atras.png"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top" 
                    Width="200"
                    Height="80"  
-                   Margin="25,20,0,0" 
+                   Margin="20,20,0,0" 
                    Stretch="Uniform"
                    Visibility="Visible"
                    PreviewStylusDown="BtnBack_PreviewStylusDown"
                    />
         </Grid>
-        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Visible" BorderThickness="10,10,10,10" BorderBrush="#FF68B549"  CornerRadius="30,30,30,30" Margin="50,0,50,200" Background="White">
+        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Visible" BorderThickness="10,10,10,10" BorderBrush="#FF1AA1DA"  CornerRadius="30,30,30,30" Margin="100,0,100,200" Background="White">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
