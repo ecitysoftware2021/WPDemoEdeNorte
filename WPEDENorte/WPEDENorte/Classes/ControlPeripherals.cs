@@ -84,6 +84,8 @@ namespace WPEDENorte.Classes
 
         public string LogMessage;//Mensaje para el log
 
+        public static LogDispenser log;//Log del dispenser
+
         #endregion
 
         #endregion
@@ -99,6 +101,7 @@ namespace WPEDENorte.Classes
             {
                 _serialPortBills = new SerialPort();
                 _serialPortCoins = new SerialPort();
+                log = new LogDispenser();
                 InitPortBills();
                 InitPortPurses();
             }
@@ -187,6 +190,7 @@ namespace WPEDENorte.Classes
                 {
                     Thread.Sleep(2000);
                     _serialPortBills.Write(message);
+                    log.SendMessage += string.Format("Billetero: {0}\n", message);
                 }
             }
             catch (Exception ex)
@@ -207,6 +211,7 @@ namespace WPEDENorte.Classes
                 {
                     Thread.Sleep(2000);
                     _serialPortCoins.Write(message);
+                    log.SendMessage += string.Format("Monedero: {0}\n", message);
                 }
             }
             catch (Exception ex)

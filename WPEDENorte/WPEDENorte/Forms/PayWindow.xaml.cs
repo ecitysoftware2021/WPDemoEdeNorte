@@ -116,7 +116,12 @@ namespace WPEDENorte.Forms
                             Cancelled();
                         };
 
-                        Utilities.control.StartDispenser(Utilities.DispenserVal);
+                        Utilities.control.callbackError = error =>
+                        {
+                            Utilities.SaveLogDispenser(ControlPeripherals.log);
+                        };
+
+                    Utilities.control.StartDispenser(Utilities.DispenserVal);
                     }
                     else
                     {
@@ -163,6 +168,11 @@ namespace WPEDENorte.Forms
                     }
                 };
 
+                Utilities.control.callbackError = error =>
+                {
+                    Utilities.SaveLogDispenser(ControlPeripherals.log);
+                };
+
                 Utilities.control.StartAceptance(PaymentViewModel.PayValue);
             }
             catch (Exception ex)
@@ -180,6 +190,7 @@ namespace WPEDENorte.Forms
             {
                 Utilities.control.callbackTotalOut = totalOut =>
                 {
+                    Utilities.SaveLogDispenser(ControlPeripherals.log);
                     if (state)
                     {
                         SavePay();
@@ -200,6 +211,11 @@ namespace WPEDENorte.Forms
                     {
                         Cancelled();
                     }
+                };
+
+                Utilities.control.callbackError = error =>
+                {
+                    Utilities.SaveLogDispenser(ControlPeripherals.log);
                 };
 
                 Utilities.control.StartDispenser(returnValue);

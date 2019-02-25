@@ -101,6 +101,7 @@
     </Compile>
     <Compile Include="Classes\ControlPeripherals.cs" />
     <Compile Include="Classes\DataPaypad.cs" />
+    <Compile Include="Classes\log.cs" />
     <Compile Include="Classes\PaymentViewModel.cs" />
     <Compile Include="Classes\RequestAuth.cs" />
     <Compile Include="Classes\ResponseAuth.cs" />

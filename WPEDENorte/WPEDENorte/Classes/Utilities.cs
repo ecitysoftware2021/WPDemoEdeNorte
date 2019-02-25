@@ -41,6 +41,23 @@ namespace WPEDENorte.Classes
 
         }
 
+        public static void SaveLogDispenser(LogDispenser log)
+        {
+            try
+            {
+                LogService logService = new LogService
+                {
+                    NamePath = "C:\\LogDispenser",
+                    FileName = string.Concat("Log", DateTime.Now.ToString("yyyyMMdd"), ".json")
+                };
+
+                logService.CreateLogs(log);
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
         /// <summary>
         /// Se usa para ocultar o mostrar la modal de carga
         /// </summary>
