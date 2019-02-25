@@ -87,48 +87,46 @@ namespace WPEDENorte.Forms
         {
             try
             {
-                //PaymentGrid.Opacity = 0.3;
-                //ModalValidation comfirmation = new ModalValidation("¿ESTÁ SEGURO DE CANCELAR?");
-                //comfirmation.ShowDialog();
-                //if (comfirmation.DialogResult.Value && comfirmation.DialogResult.HasValue)
-                //{
-                Dispatcher.BeginInvoke((Action)delegate
-                {
-                    this.Opacity = 0.6;
-                    Utilities.Loading(frmLoading, true, this);
-                });
                 Task.Run(() =>
                 {
                     Utilities.control.StopAceptance();
                 });
                
-                    
-                    if (PaymentViewModel.ValorIngresado > 0)
+                if (PaymentViewModel.ValorIngresado > 0)
+                {
+                    Dispatcher.BeginInvoke((Action)delegate
                     {
-                        Utilities.DispenserVal = PaymentViewModel.ValorIngresado;
-                        Utilities.control.callbackTotalOut = totalOut =>
-                        {
-                            Cancelled();
-                        };
+                        this.Opacity = 0.6;
+                        Utilities.Loading(frmLoading, true, this);
+                    });
 
-                        Utilities.control.callbackOut = quiantityOut =>
-                        {
-                            Cancelled();
-                        };
-
-                        Utilities.control.callbackError = error =>
-                        {
-                            Utilities.SaveLogDispenser(ControlPeripherals.log);
-                        };
-
-                    Utilities.control.StartDispenser(Utilities.DispenserVal);
-                    }
-                    else
+                    Task.Run(() =>
                     {
-                        Utilities.GoToInicial();
-                    }
-                //}
-                //PaymentGrid.Opacity = 1;
+                        Thread.Sleep(3000);
+                    }).Wait();
+
+                    Utilities.DispenserVal = PaymentViewModel.ValorIngresado;
+                    Utilities.control.callbackTotalOut = totalOut =>
+                    {
+                        Cancelled();
+                    };
+
+                    Utilities.control.callbackOut = quiantityOut =>
+                    {
+                        Cancelled();
+                    };
+
+                    Utilities.control.callbackError = error =>
+                    {
+                        Utilities.SaveLogDispenser(ControlPeripherals.log);
+                    };
+
+                Utilities.control.StartDispenser(Utilities.DispenserVal);
+                }
+                else
+                {
+                    Utilities.GoToInicial();
+                }
             }
             catch (Exception ex)
             {
