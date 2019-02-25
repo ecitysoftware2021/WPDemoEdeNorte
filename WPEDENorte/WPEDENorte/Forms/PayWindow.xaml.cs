@@ -87,23 +87,19 @@ namespace WPEDENorte.Forms
         {
             try
             {
-                Task.Run(() =>
-                {
-                    Utilities.control.StopAceptance();
-                });
                
                 if (PaymentViewModel.ValorIngresado > 0)
                 {
+                    Task.Run(() =>
+                    {
+                        Utilities.control.StopAceptance();
+                    }).Wait();
+
                     Dispatcher.BeginInvoke((Action)delegate
                     {
                         this.Opacity = 0.6;
                         Utilities.Loading(frmLoading, true, this);
                     });
-
-                    Task.Run(() =>
-                    {
-                        Thread.Sleep(3000);
-                    }).Wait();
 
                     Utilities.DispenserVal = PaymentViewModel.ValorIngresado;
                     Utilities.control.callbackTotalOut = totalOut =>
@@ -121,7 +117,7 @@ namespace WPEDENorte.Forms
                         Utilities.SaveLogDispenser(ControlPeripherals.log);
                     };
 
-                Utilities.control.StartDispenser(Utilities.DispenserVal);
+                    Utilities.control.StartDispenser(Utilities.DispenserVal);
                 }
                 else
                 {
