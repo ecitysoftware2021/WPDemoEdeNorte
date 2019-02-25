@@ -30,7 +30,7 @@
                Margin="0,300,100,0"
                Width="500"
              />
-        <TextBlock Text="Gracias por su compra, por favor vuelva pronto."
+        <TextBlock Text="Gracias por su pago, por favor vuelva pronto."
                        FontFamily="Arial"
                        FontSize="80"
                        VerticalAlignment="Bottom"
