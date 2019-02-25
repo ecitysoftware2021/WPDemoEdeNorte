@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\
+C:\Users\1Cero1SAS\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\
 WPEDENorte
 none
 false
 DEBUG;TRACE
-D:\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\App.xaml
+C:\Users\1Cero1SAS\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\App.xaml
 9-68434756
 4329196325
 301015233175
-231573940074
+23-866240472
 Forms\ConfigurateWindow.xaml;Forms\DetailWindow.xaml;Forms\InitialWindow.xaml;Forms\MenuWindow.xaml;Forms\ModalWindow.xaml;Forms\PaySuccessfulWindow.xaml;Forms\PayWindow.xaml;Forms\SearchWindow.xaml;Keyboard\Generic.xaml;
 
 False

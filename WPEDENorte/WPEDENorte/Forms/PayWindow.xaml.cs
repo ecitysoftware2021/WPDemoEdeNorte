@@ -87,20 +87,16 @@ namespace WPEDENorte.Forms
         {
             try
             {
-               
+                Dispatcher.BeginInvoke((Action)delegate
+                {
+                    this.Opacity = 0.6;
+                    Utilities.Loading(frmLoading, true, this);
+                });
+
+                Utilities.control.StopAceptance();
+
                 if (PaymentViewModel.ValorIngresado > 0)
                 {
-                    Task.Run(() =>
-                    {
-                        Utilities.control.StopAceptance();
-                    }).Wait();
-
-                    Dispatcher.BeginInvoke((Action)delegate
-                    {
-                        this.Opacity = 0.6;
-                        Utilities.Loading(frmLoading, true, this);
-                    });
-
                     Utilities.DispenserVal = PaymentViewModel.ValorIngresado;
                     Utilities.control.callbackTotalOut = totalOut =>
                     {
