@@ -87,11 +87,8 @@ namespace WPEDENorte.Forms
         {
             try
             {
-                Dispatcher.BeginInvoke((Action)delegate
-                {
-                    this.Opacity = 0.6;
-                    Utilities.Loading(frmLoading, true, this);
-                });
+                this.Opacity = 0.6;
+                Utilities.Loading(frmLoading, true, this);
 
                 Utilities.control.StopAceptance();
 
