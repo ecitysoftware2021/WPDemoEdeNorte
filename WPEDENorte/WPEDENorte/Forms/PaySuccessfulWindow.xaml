@@ -21,20 +21,32 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
         <Image Source="/Images/Buttons/b-espere-su-recibo.png"
                HorizontalAlignment="Right"
-               VerticalAlignment="Bottom"
+               VerticalAlignment="Top"
                Grid.Row="0"
-               Margin="0,0,100,0"
-               Width="200"
+               Margin="0,300,100,0"
+               Width="500"
              />
+        <TextBlock Text="Gracias por su compra, por favor vuelva pronto."
+                       FontFamily="Arial"
+                       FontSize="80"
+                       VerticalAlignment="Bottom"
+                       HorizontalAlignment="Center"
+                       Margin="10,0,0,0"
+                       Foreground="#FF1AA1DA"
+                       FontWeight="Bold"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       Width="900" Grid.ColumnSpan="2"/>
         <Image Source="/Images/Others/Check.png"
                HorizontalAlignment="Center"
-               VerticalAlignment="Center"
+               VerticalAlignment="Top"
                Grid.Row="1"
                Width="500"
+               Margin="50,0,0,0"
              />
     </Grid>
 </Window>

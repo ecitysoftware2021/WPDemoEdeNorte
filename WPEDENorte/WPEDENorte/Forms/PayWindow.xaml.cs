@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -47,14 +48,14 @@ namespace WPEDENorte.Forms
 
             try
             {
-                this.value = value;
-                Utilities.PayVal = Utilities.RoundValue(value); 
+                this.value = 22000;
+                Utilities.PayVal = Utilities.RoundValue(this.value); 
                 OrganizeValues();
                 frmLoading = new ModalWindow("", true);
                 utilities = new Utilities();
                 count = 0;
                 stateUpdate = true;
-                //Utilities.control.StartValues();
+                Utilities.control.StartValues();
             }
             catch (Exception ex)
             {
@@ -65,8 +66,15 @@ namespace WPEDENorte.Forms
         {
             try
             {
-              //ActivateWallet();
-              //SavePay();
+                Task.Run(() =>
+                {
+                    ActivateWallet();
+                });
+                //SavePay();
+                //Task.Run(() =>
+                //{
+                //    a();
+                //});
             }
             catch (Exception ex)
             {
@@ -84,12 +92,17 @@ namespace WPEDENorte.Forms
                 //comfirmation.ShowDialog();
                 //if (comfirmation.DialogResult.Value && comfirmation.DialogResult.HasValue)
                 //{
-                    Dispatcher.BeginInvoke((Action)delegate
-                    {
-                        this.Opacity = 0.6;
-                        Utilities.Loading(frmLoading, true, this);
-                    });
+                Dispatcher.BeginInvoke((Action)delegate
+                {
+                    this.Opacity = 0.6;
+                    Utilities.Loading(frmLoading, true, this);
+                });
+                Task.Run(() =>
+                {
                     Utilities.control.StopAceptance();
+                });
+               
+                    
                     if (PaymentViewModel.ValorIngresado > 0)
                     {
                         Utilities.DispenserVal = PaymentViewModel.ValorIngresado;
@@ -221,9 +234,7 @@ namespace WPEDENorte.Forms
         {
             try
             {
-                //lblValorPagar.Content = string.Format("{0:C0}", Utilities.PayVal);
-                string format = String.Format("RDE {0:C0}", Utilities.PayVal);
-                lblValorPagar.Text = format.Replace("$", "");
+                lblValorPagar.Text = String.Format("RD {0:C0}", Utilities.PayVal);
 
                 PaymentViewModel = new PaymentViewModel
                 {
@@ -247,6 +258,7 @@ namespace WPEDENorte.Forms
             {
                 Dispatcher.Invoke(() =>
                 {
+                    Utilities.Loading(frmLoading, false, this);
                     PaySuccessfulWindow paySuccessful = new PaySuccessfulWindow();
                     paySuccessful.ShowDialog();
                 });
@@ -275,6 +287,18 @@ namespace WPEDENorte.Forms
             catch (Exception ex)
             {
             }
+        }
+
+        private void a()
+        {
+            Thread.Sleep(6000);
+
+            Dispatcher.Invoke(() =>
+            {
+                PaySuccessfulWindow paySuccessful = new PaySuccessfulWindow();
+                paySuccessful.ShowDialog();
+            });
+            GC.Collect();
         }
         #endregion
     }

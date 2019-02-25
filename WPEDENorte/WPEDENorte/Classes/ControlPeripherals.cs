@@ -396,9 +396,8 @@ namespace WPEDENorte.Classes
                 {
                     enterValue += decimal.Parse(response[2]);
                     callbackValueIn?.Invoke(Convert.ToDecimal(response[2]));
-
-                    ValidateEnterValue();
                 }
+                ValidateEnterValue();
             }
         }
 

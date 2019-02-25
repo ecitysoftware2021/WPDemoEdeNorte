@@ -14,6 +14,7 @@ namespace WPEDENorte.Classes
     public class Utilities
     {
         #region "References"
+        public static string Contrato { get; set; }
         public static string TOKEN { get; set; }
         public static int Session { get; set; }
         public static int CorrespondentId = 2;
@@ -158,10 +159,11 @@ namespace WPEDENorte.Classes
             {
                 CLSPrint objPrint = new CLSPrint();
 
+                objPrint.Contrato = Contrato;
                 objPrint.Estado = "Aprobado";
                 objPrint.Fecha = DateTime.Now.ToString("yyyy-MM-dd");
                 objPrint.Hora = DateTime.Now.ToString("hh:mm:ss");
-                objPrint.Valor = String.Format("{0:C0}", 2000);
+                objPrint.Valor = String.Format("{0:C0}", PayVal);
                 //objPrint.ValorIngresado = String.Format("{0:C0}", 2000);
                 //objPrint.ValorDevuelto = String.Format("{0:C0}", 2000);
 

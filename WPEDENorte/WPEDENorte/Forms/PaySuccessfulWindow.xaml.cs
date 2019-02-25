@@ -34,9 +34,20 @@ namespace WPEDENorte.Forms
             utilities.ImprimirComprobante();
             Task.Run(() =>
             {
-                Thread.Sleep(4000);
-            }).Wait();
-            Utilities.GoToInicial();
+                Close();
+            });
+        }
+
+        private void Close()
+        {
+            try
+            {
+                Thread.Sleep(6000);
+                Utilities.GoToInicial();
+            }
+            catch (Exception ex)
+            {
+            }
         }
     }
 }

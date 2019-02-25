@@ -54,8 +54,10 @@ namespace WPEDENorte.Forms
 
         private void Image_PreviewStylusDown(object sender, StylusDownEventArgs e)
         {
+            this.Opacity = 0.3;
             ModalWindow modal = new ModalWindow("En este momento no se encuentra disponible este servicio", false);
             modal.ShowDialog();
+            this.Opacity = 1;
         }
     }
 }

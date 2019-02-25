@@ -9,6 +9,7 @@ namespace WPEDENorte.Classes
 {
     public class CLSPrint
     {
+        public string Contrato { get; set; }
         public string Fecha { get; set; }
         public string Hora { get; set; }
         public string Estado { get; set; }
@@ -56,11 +57,26 @@ namespace WPEDENorte.Classes
                 int sum = 30;
                 int x = 150;
 
-                //string RutaIMG = GetConfiguration("LogoComprobante");
-                //g.DrawImage(Image.FromFile(RutaIMG), y += sum + 20, 0);
+                string RutaIMG = GetConfiguration("LogoComprobante");
+                g.DrawImage(Image.FromFile(RutaIMG), y += sum + 40, 0);
 
                 g.DrawString("COMPROBANTE DE VENTA", fGIBTitles, sb, 25, y += sum);
                 g.DrawString("Nit xxx.xxx.xxx.x", fContent, sb, 95, y += sum);
+
+                g.DrawString("Contrato:", fTitles, sb, 10, y += sum);
+                g.DrawString(Contrato, fContent, sb, x, y);
+
+                g.DrawString("Fecha:", fTitles, sb, 10, y += sum);
+                g.DrawString(Fecha, fContent, sb, x, y);
+
+                g.DrawString("Hora:", fTitles, sb, 10, y += sum);
+                g.DrawString(Hora, fContent, sb, x, y);
+
+                g.DrawString("Estado:", fTitles, sb, 10, y += sum);
+                g.DrawString(Estado, fContent, sb, x, y);
+
+                g.DrawString("Valor:", fTitles, sb, 10, y += sum);
+                g.DrawString(Valor, fContent, sb, x, y);
 
                 g.DrawString("========================================", fContent, sb, 10, y += sum);
 

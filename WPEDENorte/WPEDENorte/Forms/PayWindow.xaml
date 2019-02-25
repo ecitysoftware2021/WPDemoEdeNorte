@@ -52,7 +52,7 @@
                    VerticalAlignment="Center"
                    FontSize="60"
                    Grid.Row="2"/>
-        <TextBlock Text="{Binding ValorIngresado, StringFormat={}{0:C0}}" 
+        <TextBlock
                    Name="lblValorIngresado" 
                    FontFamily="pack://application:,,,/fonts/#Ubuntu"
                    Foreground="#606060"
@@ -61,7 +61,13 @@
                    VerticalAlignment="Center"
                    FontSize="50" 
                    Height="56" 
-                   Grid.Row="2"/>
+                   Grid.Row="2"
+                   TextAlignment="Center"
+                   TextWrapping="Wrap"
+                   >
+                <Run Foreground="Gray" Text="RD"/>
+                <Run Text="{ Binding ValorIngresado, StringFormat={}{0:C0}}"/>
+        </TextBlock>
         <Label Content="Valor Faltante" 
                FontFamily="pack://application:,,,/fonts/#Ubuntu"
                 Foreground="#606060"
@@ -70,7 +76,7 @@
                 VerticalAlignment="Center"
                 FontSize="60"
                 Grid.Row="2"/>
-        <TextBlock Text="{Binding ValorFaltante, StringFormat={}{0:C0}}" 
+        <TextBlock  
                    Name="lblFaltante"
                    FontFamily="pack://application:,,,/fonts/#Ubuntu"
                    Foreground="#606060"
@@ -78,7 +84,10 @@
                    VerticalAlignment="Center"
                    Margin="700,10,0,0" 
                    FontSize="50" 
-                   Grid.Row="2"/>
+                   Grid.Row="2">
+        <Run Foreground="Gray" Text="RD"/>
+        <Run Text="{Binding ValorFaltante, StringFormat={}{0:C0}}"/>
+        </TextBlock>
         <Label Content="Valor Restante" 
                    FontFamily="pack://application:,,,/fonts/#Ubuntu"
                    Foreground="#606060"
@@ -87,7 +96,7 @@
                    VerticalAlignment="Center"
                    FontSize="60" 
                    Grid.Row="2"/>
-        <TextBlock Text="{Binding ValorSobrante, StringFormat={}{0:C0}}" 
+        <TextBlock  
                    Name="lblSobrante" 
                    FontFamily="pack://application:,,,/fonts/#Ubuntu"
                    Foreground="#606060"
@@ -95,7 +104,10 @@
                    VerticalAlignment="Center"
                    Margin="700,190,0,0"
                    FontSize="50" 
-                   Grid.Row="2"/>
+                   Grid.Row="2">
+        <Run Foreground="Gray" Text="RD"/>
+        <Run Text="{Binding ValorSobrante, StringFormat={}{0:C0}}"/>
+        </TextBlock>
         <Image Name="btnCancelar"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top" 

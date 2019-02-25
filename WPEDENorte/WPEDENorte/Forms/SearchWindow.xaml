@@ -26,7 +26,7 @@
             <RowDefinition Height="450" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0">
+        <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
             <Image x:Name="BtnExit"
                    Source="../Images/Buttons/b-salir.png"
                    Grid.Column="0"
@@ -34,7 +34,7 @@
                    VerticalAlignment="Top" 
                    Width="200"
                    Height="80" 
-                   Margin="0,20,20,0"
+                   Margin="0,20,80,0"
                    Stretch="Uniform"
                    PreviewStylusDown="BtnExit_PreviewStylusDown"/>
             <Image x:Name="BtnBack"
@@ -43,7 +43,7 @@
                    VerticalAlignment="Top" 
                    Width="200"
                    Height="80"  
-                   Margin="20,20,0,0" 
+                   Margin="100,20,0,0" 
                    Stretch="Uniform"
                    PreviewStylusDown="BtnBack_PreviewStylusDown"
                    Visibility="Visible"/>
@@ -58,20 +58,20 @@
                        HorizontalAlignment="Center"
                        VerticalAlignment="Top"
                        Foreground="#FF1AA1DA" 
-                       Margin="0,400,0,0"/>
+                       Margin="0,300,0,0"/>
             <TextBlock x:Name="lblTitle"
-                Text="Ingrese el número de factura" 
+                Text="Ingrese el número de contrato" 
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
                 FontWeight="Bold" 
                 FontSize="60" 
                 Foreground="#FF1AA1DA" 
                 TextWrapping="WrapWithOverflow"
-                Margin="0,600,0,0"/>
+                Margin="0,480,0,0"/>
             <TextBox x:Name="TxtNumero"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center" 
-                Margin="0,0,0,450" 
+                Margin="0,0,0,600" 
                 Width="550"
                 Height="70"
                 Text="69159853243"
@@ -79,7 +79,8 @@
                 FontSize="45"
                 Foreground="#585858" 
                 />
-            <Grid Margin="0,850,0,0">
+            
+            <Grid Margin="0,750,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="500" />
                     <RowDefinition Height="*" />
@@ -240,7 +241,7 @@
                    Height="130"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Bottom"
-                   Margin="0,0,0,200"
+                   Margin="0,0,0,300"
                    Grid.Row="2"
                    Grid.ColumnSpan="2"
                    TabIndex="2"
@@ -256,13 +257,13 @@
         </materialDesign:TransitioningContent>
 
         <Image x:Name="gif"
-                   gif:ImageBehavior.AnimatedSource="../Images/Gif/loading.gif"
+                   gif:ImageBehavior.AnimatedSource="../Images/Gif/gif-cargando.gif"
                    Stretch="Uniform"
-                   Width="450"
-                   Height="380"
+                   Width="400"
+                   Height="200"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Bottom"
-                   Margin="0,0,0,100"
+                   Margin="0,0,0,250"
                    Visibility="Hidden"
                    Grid.Row="2"
                    Grid.ColumnSpan="2"

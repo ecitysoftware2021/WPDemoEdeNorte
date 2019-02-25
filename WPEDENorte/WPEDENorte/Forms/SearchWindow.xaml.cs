@@ -143,6 +143,7 @@ namespace WPEDENorte.Forms
                 {
                     Dispatcher.BeginInvoke((Action)delegate
                     {
+                        Utilities.Contrato = num;
                         DetailWindow detail = new DetailWindow(types);
                         detail.Show();
                         this.Close();

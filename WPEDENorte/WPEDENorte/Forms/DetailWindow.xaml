@@ -24,7 +24,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0">
+        <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
             <Image x:Name="BtnExit"
                    Source="../Images/Buttons/b-salir.png"
                    Grid.Column="0"
@@ -32,7 +32,7 @@
                    VerticalAlignment="Top" 
                    Width="200"
                    Height="80" 
-                   Margin="0,20,20,0"
+                   Margin="0,20,80,0"
                    Stretch="Uniform"
                    PreviewStylusDown="BtnExit_PreviewStylusDown"
                    />
@@ -42,13 +42,13 @@
                    VerticalAlignment="Top" 
                    Width="200"
                    Height="80"  
-                   Margin="20,20,0,0" 
+                   Margin="100,20,0,0" 
                    Stretch="Uniform"
                    Visibility="Visible"
                    PreviewStylusDown="BtnBack_PreviewStylusDown"
                    />
         </Grid>
-        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Visible" BorderThickness="10,10,10,10" BorderBrush="#FF1AA1DA"  CornerRadius="30,30,30,30" Margin="100,0,100,200" Background="White">
+        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Visible" BorderThickness="10,10,10,10" BorderBrush="#FF1AA1DA"  CornerRadius="30,30,30,30" Margin="100,0,80,200" Background="White">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -317,10 +317,10 @@
                    Grid.Row="3"
                    HorizontalAlignment="Center" 
                    VerticalAlignment="Bottom" 
-                   Width="700"
-                   Height="140"
+                   Width="400"
+                   Height="120"
                    TabIndex="1"
-                   Margin="0,0,0,0"
+                   Margin="0,0,0,50"
                    PreviewStylusDown="BtnPagar_PreviewStylusDown"
                    >
                 <Button.Background>
