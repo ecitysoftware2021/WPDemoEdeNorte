@@ -36,7 +36,7 @@ namespace WPEDENorte.Forms
             {
                 datos.Valor = String.Format("RD {0:C0}", Convert.ToDecimal(datos.Valor));
 
-                this.DataContext = datos;
+                this.Border.DataContext = datos;
             }
             catch (Exception ex)
             {
