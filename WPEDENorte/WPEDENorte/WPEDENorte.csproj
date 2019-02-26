@@ -295,6 +295,7 @@
     <Resource Include="Images\Keyboard\9.png" />
     <Resource Include="Images\Keyboard\borrar.png" />
     <Resource Include="Images\Keyboard\x.png" />
+    <Resource Include="Images\Background\f-para-modales.jpg" />
     <Content Include="LocalBD\EDENorteADO.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EDENorteADO.Context.cs</LastGenOutput>

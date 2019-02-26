@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,16 @@ namespace WPEDENorte.Forms
     /// </summary>
     public partial class DetailWindow : Window
     {
+        private ObservableCollection<Background> fondo;
+        private int num;
+
         public DetailWindow(Facturas datos)
         {
             InitializeComponent();
+            fondo = new ObservableCollection<Background>();
+            this.DataContext = fondo;
+            num = 1;
+            ChangeBackground();
 
             try
             {
@@ -79,5 +87,57 @@ namespace WPEDENorte.Forms
             pay.Show();
             this.Close();
         }
+
+        private void ChangeBackground()
+        {
+            try
+            {
+                if (num == 1)
+                {
+                    fondo.Add(new Background
+                    {
+                        background = @"Images/Background/f-para-modales.jpg"
+                    });
+                    if (fondo.Count > 1)
+                    {
+                        fondo.RemoveAt(0);
+                    }
+                }
+                else if (num == 2)
+                {
+
+                    fondo.Add(new Background
+                    {
+                        background = @"Images/Background/f-generico.png"
+                    });
+                    fondo.RemoveAt(0);
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void BtnX_PreviewStylusDown(object sender, StylusDownEventArgs e)
+        {
+            num = 2;
+            ChangeBackground();
+            BtnX.Visibility = Visibility.Hidden;
+            BtnPagar.IsEnabled = true;
+            BtnExit.IsEnabled = true;
+            BtnBack.IsEnabled = true;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            BtnPagar.IsEnabled = false;
+            BtnExit.IsEnabled = false;
+            BtnBack.IsEnabled = false;
+        }
+    }
+
+    public class Background
+    {
+       public string background { get; set; }
     }
 }

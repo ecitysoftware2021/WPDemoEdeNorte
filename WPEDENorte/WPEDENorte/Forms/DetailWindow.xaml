@@ -9,11 +9,12 @@
         Title="DetailWindow" WindowStyle="None"
         WindowState="Maximized"
         Height="2064.095" 
-        Width="1250.599">
-    <Window.Background>
-        <ImageBrush ImageSource="../Images/Background/f-generico.png"/>
-    </Window.Background>
+        Width="1250.599"
+        Loaded="Window_Loaded">
     <Grid x:Name="GrvPpl">
+        <Grid.Background>
+            <ImageBrush  ImageSource="{Binding background}"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -48,7 +49,7 @@
                    PreviewStylusDown="BtnBack_PreviewStylusDown"
                    />
         </Grid>
-        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Visible" BorderThickness="10,10,10,10" BorderBrush="#FF1AA1DA"  CornerRadius="30,30,30,30" Margin="100,0,80,200" Background="White">
+        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Visible" BorderThickness="10,10,10,10" BorderBrush="#FF1AA1DA"  CornerRadius="30,30,30,30" Margin="110,0,90,200" Background="White">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -76,6 +77,16 @@
                        HorizontalAlignment="Center"
                        VerticalAlignment="Top"
                        Margin="0,0,0,0"/>
+                <Image x:Name="BtnX"
+                   Source="../Images/Buttons/x.png"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top" 
+                   Width="80"
+                   Margin="0,0,0,0"
+                   Grid.ColumnSpan="2"
+                   Stretch="Uniform"
+                   PreviewStylusDown="BtnX_PreviewStylusDown"
+                   />
                 <TextBlock 
                    HorizontalAlignment="Left"
                    VerticalAlignment="Center"
