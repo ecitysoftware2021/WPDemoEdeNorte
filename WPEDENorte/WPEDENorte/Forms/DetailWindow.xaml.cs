@@ -117,23 +117,6 @@ namespace WPEDENorte.Forms
             {
             }
         }
-
-        private void BtnX_PreviewStylusDown(object sender, StylusDownEventArgs e)
-        {
-            num = 2;
-            ChangeBackground();
-            BtnX.Visibility = Visibility.Hidden;
-            BtnPagar.IsEnabled = true;
-            BtnExit.IsEnabled = true;
-            BtnBack.IsEnabled = true;
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            BtnPagar.IsEnabled = false;
-            BtnExit.IsEnabled = false;
-            BtnBack.IsEnabled = false;
-        }
     }
 
     public class Background

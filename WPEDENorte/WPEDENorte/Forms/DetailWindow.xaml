@@ -10,7 +10,7 @@
         WindowState="Maximized"
         Height="2064.095" 
         Width="1250.599"
-        Loaded="Window_Loaded">
+        >
     <Grid x:Name="GrvPpl">
         <Grid.Background>
             <ImageBrush  ImageSource="{Binding background}"/>
@@ -57,7 +57,7 @@
                 </Button.BorderThickness>
             </Button>
         </Grid>
-        <Border Name="Border" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Visible" BorderThickness="10,10,10,10" BorderBrush="#FF1AA1DA"  CornerRadius="30,30,30,30" Margin="110,0,90,200" Background="White">
+        <Border Name="Border" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Visible" BorderThickness="10,10,10,10" CornerRadius="30,30,30,30" Margin="110,0,90,200" Background="White">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -85,16 +85,6 @@
                        HorizontalAlignment="Center"
                        VerticalAlignment="Top"
                        Margin="0,0,0,0"/>
-                <Image x:Name="BtnX"
-                   Source="../Images/Buttons/x.png"
-                   HorizontalAlignment="Right"
-                   VerticalAlignment="Top" 
-                   Width="80"
-                   Margin="0,0,0,0"
-                   Grid.ColumnSpan="2"
-                   Stretch="Uniform"
-                   PreviewStylusDown="BtnX_PreviewStylusDown"
-                   />
                 <TextBlock 
                    HorizontalAlignment="Left"
                    VerticalAlignment="Center"
@@ -317,14 +307,6 @@
                    TextAlignment="Center"
                     />
             </Grid>
-            <Border.Effect>
-                <DropShadowEffect
-                        ShadowDepth="20"
-                        Direction="225"
-                        Color="Gray"
-                        Opacity="0.6"
-                        BlurRadius="30.0"/>
-            </Border.Effect>
         </Border>
 
         <materialDesign:TransitioningContent  OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:1.2}" Grid.Row="2" Grid.ColumnSpan="2" Visibility="Visible">
