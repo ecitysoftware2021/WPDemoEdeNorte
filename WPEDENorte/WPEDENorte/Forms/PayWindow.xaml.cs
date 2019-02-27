@@ -70,11 +70,6 @@ namespace WPEDENorte.Forms
                 {
                     ActivateWallet();
                 });
-                //SavePay();
-                //Task.Run(() =>
-                //{
-                //    a();
-                //});
             }
             catch (Exception ex)
             {
@@ -290,18 +285,6 @@ namespace WPEDENorte.Forms
             catch (Exception ex)
             {
             }
-        }
-
-        private void a()
-        {
-            Thread.Sleep(6000);
-
-            Dispatcher.Invoke(() =>
-            {
-                PaySuccessfulWindow paySuccessful = new PaySuccessfulWindow();
-                paySuccessful.ShowDialog();
-            });
-            GC.Collect();
         }
         #endregion
     }
