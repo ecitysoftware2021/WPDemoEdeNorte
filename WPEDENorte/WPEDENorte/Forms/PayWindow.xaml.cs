@@ -55,7 +55,7 @@ namespace WPEDENorte.Forms
                 utilities = new Utilities();
                 count = 0;
                 stateUpdate = true;
-                Utilities.control.StartValues();
+                //Utilities.control.StartValues();
             }
             catch (Exception ex)
             {
@@ -68,7 +68,7 @@ namespace WPEDENorte.Forms
             {
                 Task.Run(() =>
                 {
-                    ActivateWallet();
+                    SavePay();
                 });
             }
             catch (Exception ex)
@@ -82,35 +82,35 @@ namespace WPEDENorte.Forms
         {
             try
             {
-                this.Opacity = 0.6;
-                Utilities.Loading(frmLoading, true, this);
+                //this.Opacity = 0.6;
+                //Utilities.Loading(frmLoading, true, this);
 
-                Utilities.control.StopAceptance();
+                //Utilities.control.StopAceptance();
 
-                if (PaymentViewModel.ValorIngresado > 0)
-                {
-                    Utilities.DispenserVal = PaymentViewModel.ValorIngresado;
-                    Utilities.control.callbackTotalOut = totalOut =>
-                    {
-                        Cancelled();
-                    };
+                //if (PaymentViewModel.ValorIngresado > 0)
+                //{
+                //    Utilities.DispenserVal = PaymentViewModel.ValorIngresado;
+                //    Utilities.control.callbackTotalOut = totalOut =>
+                //    {
+                //        Cancelled();
+                //    };
 
-                    Utilities.control.callbackOut = quiantityOut =>
-                    {
-                        Cancelled();
-                    };
+                //    Utilities.control.callbackOut = quiantityOut =>
+                //    {
+                //        Cancelled();
+                //    };
 
-                    Utilities.control.callbackError = error =>
-                    {
-                        Utilities.SaveLogDispenser(ControlPeripherals.log);
-                    };
+                //    Utilities.control.callbackError = error =>
+                //    {
+                //        Utilities.SaveLogDispenser(ControlPeripherals.log);
+                //    };
 
-                    Utilities.control.StartDispenser(Utilities.DispenserVal);
-                }
-                else
-                {
+                //    Utilities.control.StartDispenser(Utilities.DispenserVal);
+                //}
+                //else
+                //{
                     Utilities.GoToInicial();
-                }
+                //}
             }
             catch (Exception ex)
             {
@@ -254,13 +254,17 @@ namespace WPEDENorte.Forms
         {
             try
             {
-                Dispatcher.Invoke(() =>
+                Task.Run(() =>
                 {
-                    Utilities.Loading(frmLoading, false, this);
-                    PaySuccessfulWindow paySuccessful = new PaySuccessfulWindow();
-                    paySuccessful.ShowDialog();
+                    Thread.Sleep(3000);
+                    Dispatcher.Invoke(() =>
+                    {
+                        Utilities.Loading(frmLoading, false, this);
+                        PaySuccessfulWindow paySuccessful = new PaySuccessfulWindow();
+                        paySuccessful.ShowDialog();
+                    });
+                    GC.Collect();
                 });
-                GC.Collect();
             }
             catch (Exception ex)
             {

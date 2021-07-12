@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Net.Http;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using WPEDENorte.Classes;
@@ -126,8 +127,8 @@ namespace WPEDENorte.Services
         {
             try
             {
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                string[] text = File.ReadAllLines(string.Format(@"{0}\keys.txt", path));
+                string[] text = File.ReadAllLines(Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "Keys.txt"));
+
                 if (text.Length > 0)
                 {
                     string[] line1 = text[0].Split(';');

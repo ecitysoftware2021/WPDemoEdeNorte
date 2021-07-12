@@ -117,6 +117,35 @@ namespace WPEDENorte.Forms
             {
             }
         }
+
+        private bool state = false;
+        private void btnDetalle_TouchDown(object sender, TouchEventArgs e)
+        {
+            state = !state;
+
+            if (state)
+            {
+                GRV1.Visibility = Visibility.Visible;
+                GRV2.Visibility = Visibility.Visible;
+                GRV3.Visibility = Visibility.Visible;
+                GRV4.Visibility = Visibility.Visible;
+                GRV5.Visibility = Visibility.Visible;
+                GRV6.Visibility = Visibility.Visible;
+                GRV7.Visibility = Visibility.Visible;
+                GRV8.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                GRV1.Visibility = Visibility.Hidden;
+                GRV2.Visibility = Visibility.Hidden;
+                GRV3.Visibility = Visibility.Hidden;
+                GRV4.Visibility = Visibility.Hidden;
+                GRV5.Visibility = Visibility.Hidden;
+                GRV6.Visibility = Visibility.Hidden;
+                GRV7.Visibility = Visibility.Hidden;
+                GRV8.Visibility = Visibility.Hidden;
+            }
+        }
     }
 
     public class Background

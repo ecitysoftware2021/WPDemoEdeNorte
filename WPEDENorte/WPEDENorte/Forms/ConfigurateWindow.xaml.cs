@@ -37,7 +37,7 @@ namespace WPEDENorte.Forms
         {
             try
             {
-                Utilities util = new Utilities(1);
+                //Utilities util = new Utilities(1);
                 state = await api.SecurityToken();
                 if (state)
                 {
@@ -46,34 +46,34 @@ namespace WPEDENorte.Forms
                     {
                         DataPaypad data = JsonConvert.DeserializeObject<DataPaypad>(response.Data.ToString());
 
-                        if (data.State)
+                        //if (data.State)
+                        //{
+                        //    if (data.StateAceptance && data.StateDispenser)
+                        //    {
+                        //        Utilities.control.callbackError = error =>
+                        //        {
+                        //            GetToken();
+                        //        };
+                        //        Utilities.control.callbackToken = isSucces =>
+                        //        {
+                        Dispatcher.BeginInvoke((Action)delegate
                         {
-                            if (data.StateAceptance && data.StateDispenser)
-                            {
-                                Utilities.control.callbackError = error =>
-                                {
-                                    GetToken();
-                                };
-                                Utilities.control.callbackToken = isSucces =>
-                                {
-                                    Dispatcher.BeginInvoke((Action)delegate
-                                    {
-                                        InitialWindow inicio = new InitialWindow();
-                                        inicio.Show();
-                                        Close();
-                                    });
-                                };
-                                Utilities.control.Start();
-                            }
-                            else
-                            {
-                                ShowModalError("No están disponibles los billeteros");
-                            }
-                        }
-                        else
-                        {
-                            ShowModalError("No se pudo verificar el estado de los periféricos");
-                        }
+                            InitialWindow inicio = new InitialWindow();
+                            inicio.Show();
+                            Close();
+                        });
+                        //        };
+                        //        Utilities.control.Start();
+                        //    }
+                        //    else
+                        //    {
+                        //        ShowModalError("No están disponibles los billeteros");
+                        //    }
+                        //}
+                        //else
+                        //{
+                        //    ShowModalError("No se pudo verificar el estado de los periféricos");
+                        //}
                     }
                     else
                     {
