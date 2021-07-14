@@ -11,7 +11,7 @@
         Width="1250.599"
         WindowStartupLocation="CenterScreen"
        >
-    <Grid PreviewStylusDown="Grid_PreviewStylusDown">
+    <Grid TouchDown="Grid_TouchDown">
         <Grid.Background>
             <ImageBrush ImageSource="{Binding sourse}"/>
         </Grid.Background>

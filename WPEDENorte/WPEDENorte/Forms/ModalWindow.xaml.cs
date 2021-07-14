@@ -31,19 +31,7 @@ namespace WPEDENorte.Forms
         }
         #endregion
 
-        #region "Button"
-        private void Image_PreviewStylusDown(object sender, StylusDownEventArgs e)
-        {
-            try
-            {
-                DialogResult = true;
-            }
-            catch (Exception ex)
-            {
-            }
-        }
-        #endregion
-
+    
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(mensaje) && giff == true)
@@ -56,6 +44,11 @@ namespace WPEDENorte.Forms
             {
                 LblMessage.Text = mensaje;
             }
+        }
+
+        private void btnAceptar_TouchDown(object sender, TouchEventArgs e)
+        {
+            DialogResult = true;
         }
     }
 }

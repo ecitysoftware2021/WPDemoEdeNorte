@@ -36,7 +36,7 @@
                    Height="80" 
                    Margin="0,20,80,0"
                    Stretch="Uniform"
-                   PreviewStylusDown="BtnExit_PreviewStylusDown"/>
+                   TouchDown="BtnExit_TouchDown"/>
             <Image x:Name="BtnBack"
                    Source="/Images/Buttons/b-atras.png"
                    HorizontalAlignment="Left"
@@ -45,7 +45,7 @@
                    Height="80"  
                    Margin="100,20,0,0" 
                    Stretch="Uniform"
-                   PreviewStylusDown="BtnBack_PreviewStylusDown"
+                   TouchDown="BtnBack_TouchDown"
                    Visibility="Visible"/>
         </Grid>
 
@@ -99,7 +99,7 @@
                    HorizontalAlignment="Right"
                    VerticalAlignment="Top"
                    Grid.Column="1"
-                   StylusDown="Keyboard_StylusDown"
+                   TouchDown="Img0_TouchDown"
                    />
                 <Image x:Name="Img8"
                    Tag="8"
@@ -110,7 +110,7 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Top"
                    Grid.Column="1"
-                   StylusDown="Keyboard_StylusDown"
+                   TouchDown="Img0_TouchDown"
                    />
                 <Image x:Name="Img7"
                    Tag="7"
@@ -121,7 +121,7 @@
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    Grid.Column="1"
-                   StylusDown="Keyboard_StylusDown"
+                   TouchDown="Img0_TouchDown"
                    />
                 <Image x:Name="Img6"
                    Tag="6"
@@ -132,7 +132,7 @@
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
                    Grid.Column="1"
-                   StylusDown="Keyboard_StylusDown"
+                   TouchDown="Img0_TouchDown"
                    />
                 <Image x:Name="Img5"
                    Tag="5"
@@ -143,7 +143,7 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    Grid.Column="1"
-                   StylusDown="Keyboard_StylusDown"
+                   TouchDown="Img0_TouchDown"
                    />
                 <Image x:Name="Img4"
                    Tag="4"
@@ -154,7 +154,7 @@
                    HorizontalAlignment="Left"
                    VerticalAlignment="Center"
                    Grid.Column="1"
-                   StylusDown="Keyboard_StylusDown"
+                   TouchDown="Img0_TouchDown"
                    />
                 <Image x:Name="Img3"
                    Tag="3"
@@ -166,7 +166,7 @@
                    VerticalAlignment="Top"
                    Grid.Column="1"
                    Margin="0,350,0,0"
-                   StylusDown="Keyboard_StylusDown"
+                   TouchDown="Img0_TouchDown"
                    />
                 <Image x:Name="Img2"
                    Tag="2"
@@ -177,7 +177,7 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Bottom"
                    Grid.Column="1"
-                   StylusDown="Keyboard_StylusDown"
+                   TouchDown="Img0_TouchDown"
                    />
                 <Image x:Name="Img1"
                    Tag="1"
@@ -188,7 +188,7 @@
                    HorizontalAlignment="Left"
                    VerticalAlignment="Bottom"
                    Grid.Column="1"
-                   StylusDown="Keyboard_StylusDown"
+                   TouchDown="Img0_TouchDown"
                    />
                 <Image x:Name="ImgDelete"
                    Tag="x"
@@ -201,7 +201,7 @@
                    Grid.Column="1"
                    Grid.Row="1"
                    Margin="0,10,0,0"
-                   StylusDown="ImgDelete_StylusDown"
+                       TouchDown="ImgDelete_TouchDown"
                    />
                 <Image x:Name="Img0"
                    Tag="0"
@@ -214,7 +214,7 @@
                    Grid.Column="1"
                    Grid.Row="1"
                    Margin="0,10,0,0"
-                   StylusDown="Keyboard_StylusDown"
+                       TouchDown="Img0_TouchDown"
                    />
                 <Image x:Name="ImgDeleteAll"
                    Tag="all"
@@ -227,7 +227,7 @@
                    Grid.Column="1"
                    Grid.Row="1"
                    Margin="0,10,0,0"
-                   StylusDown="ImgDeleteAll_StylusDown"
+                       TouchDown="ImgDeleteAll_TouchDown"
                    />
             </Grid>
         </Grid>
@@ -245,7 +245,7 @@
                    Grid.Row="2"
                    Grid.ColumnSpan="2"
                    TabIndex="2"
-                   StylusDown="BtnConsultar_StylusDown_1"
+                    TouchDown="btnConsultar_TouchDown"
                    >
                 <Button.Background>
                     <ImageBrush ImageSource="/Images/Buttons/b-consultar.png" Stretch="Fill" />

@@ -40,7 +40,7 @@
                HorizontalAlignment="Left"
                Margin="60,0,0,0"
                Name="BtnPayFactura"               
-               PreviewStylusDown="BtnPayFactura_PreviewStylusDown"
+               TouchDown="BtnPayFactura_TouchDown"
                Width="500"
                />
         </materialDesign:TransitioningContent>
@@ -56,7 +56,7 @@
                HorizontalAlignment="Right"
                Margin="0,0,60,0"
                Width="460"
-               PreviewStylusDown="Image_PreviewStylusDown"
+               Opacity="0.3"
                />
         </materialDesign:TransitioningContent>
     </Grid>
