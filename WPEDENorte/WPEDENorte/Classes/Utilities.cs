@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Configuration;
 using System.Diagnostics;
 using System.IO;
@@ -200,7 +201,10 @@ namespace WPEDENorte.Classes
                 using (var conexion = new EDENorteBDEntities())
                 {
                     var types = conexion.Tbl_Facturas.ToList();
-                    if (types.Count() > 0)
+
+                    var json = JsonConvert.SerializeObject(types);
+
+                        if (types.Count() > 0)
                     {
                         foreach (var type in types)
                         {
