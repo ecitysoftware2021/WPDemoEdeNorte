@@ -32,7 +32,7 @@
                    Width="200"
                    Height="80" 
                    Margin="0,20,80,0"
-                   PreviewStylusDown="BtnExit_PreviewStylusDown"
+                   TouchDown="BtnExit_TouchDown"
                    >
                 <Button.Background>
                     <ImageBrush ImageSource="/Images/Buttons/b-salir.png" Stretch="Fill" />
@@ -47,7 +47,7 @@
                    Width="200"
                    Height="80"  
                    Margin="100,20,0,0" 
-                   PreviewStylusDown="BtnBack_PreviewStylusDown"
+                   TouchDown="BtnBack_TouchDown"
                    >
                 <Button.Background>
                     <ImageBrush ImageSource="/Images/Buttons/b-atras.png" Stretch="Fill" />
@@ -386,7 +386,7 @@
                    Height="120"
                    TabIndex="1"
                    Margin="0,0,0,50"
-                   PreviewStylusDown="BtnPagar_PreviewStylusDown"
+                   TouchDown="BtnPagar_TouchDown"
                    >
                 <Button.Background>
                     <ImageBrush ImageSource="/Images/Buttons/b-aceptar.png" Stretch="Fill" />

@@ -118,7 +118,7 @@
                    Source="/Images/Buttons/b-cancelar.png"
                    Grid.Row="3"
                    Visibility="{Binding ImgCancel}"
-                   PreviewStylusDown="btnCancelar_PreviewStylusDown"/>
+                   />
         <Image Visibility="{Binding ImgLeyendoBillete}" 
                Source="/Images/Buttons/b-leyendo-billete.png"
                Name="imgLeyendoBillete"                
