@@ -54,17 +54,11 @@ namespace WPEDENorte.Forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Grid_PreviewStylusDown(object sender, StylusDownEventArgs e)
+        private void Grid_TouchDown(object sender, TouchEventArgs e)
         {
-            try
-            {
-                MenuWindow Menu = new MenuWindow();
-                Menu.Show();
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-            }
+            MenuWindow Menu = new MenuWindow();
+            Menu.Show();
+            this.Close();
         }
         #endregion
 
@@ -103,5 +97,7 @@ namespace WPEDENorte.Forms
         }
 
         #endregion
+
+
     }
 }

@@ -43,50 +43,6 @@ namespace WPEDENorte.Forms
             }
         }
 
-        #region "HeadersButtons"
-        /// <summary>
-        /// Botón que me redirecciona a la ventana anterior
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtnBack_PreviewStylusDown(object sender, StylusDownEventArgs e)
-        {
-            try
-            {
-                SearchWindow search = new SearchWindow();
-                search.Show();
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-            }
-        }
-
-        /// <summary>
-        /// Botón que me redirecciona a la ventana inicial
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtnExit_PreviewStylusDown(object sender, StylusDownEventArgs e)
-        {
-            try
-            {
-                Utilities.GoToInicial();
-            }
-            catch (Exception ex)
-            {
-            }
-        }
-        #endregion
-
-        private void BtnPagar_PreviewStylusDown(object sender, StylusDownEventArgs e)
-        {
-            decimal valor = Convert.ToDecimal(txtValor.Text.Trim().Replace("RD $ ","").Replace(",", "").Replace(".", ""));
-
-            PayWindow pay = new PayWindow(valor);
-            pay.Show();
-            this.Close();
-        }
 
         private void ChangeBackground()
         {
@@ -145,6 +101,28 @@ namespace WPEDENorte.Forms
                 GRV7.Visibility = Visibility.Hidden;
                 GRV8.Visibility = Visibility.Hidden;
             }
+        }
+
+        private void BtnBack_TouchDown(object sender, TouchEventArgs e)
+        {
+            SearchWindow search = new SearchWindow();
+            search.Show();
+            this.Close();
+        }
+
+        private void BtnExit_TouchDown(object sender, TouchEventArgs e)
+        {
+            Utilities.GoToInicial();
+        }
+
+        private void BtnPagar_TouchDown(object sender, TouchEventArgs e)
+        {
+            //decimal valor = Convert.ToDecimal(txtValor.Text.Trim().Replace("RD $ ", "").Replace(",", "").Replace(".", ""));
+            decimal valor = 2000;
+
+            PayWindow pay = new PayWindow(valor);
+            pay.Show();
+            this.Close();
         }
     }
 

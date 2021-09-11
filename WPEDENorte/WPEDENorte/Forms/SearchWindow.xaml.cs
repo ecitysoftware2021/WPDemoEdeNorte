@@ -25,42 +25,6 @@ namespace WPEDENorte.Forms
         }
         #endregion
 
-        #region "HeadersButtons"
-        /// <summary>
-        /// Botón que me redirecciona a la ventana anterior
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtnBack_PreviewStylusDown(object sender, StylusDownEventArgs e)
-        {
-            try
-            {
-                MenuWindow menu = new MenuWindow();
-                menu.Show();
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-            }
-        }
-
-        /// <summary>
-        /// Botón que me redirecciona a la ventana inicial
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtnExit_PreviewStylusDown(object sender, StylusDownEventArgs e)
-        {
-            try
-            {
-                Utilities.GoToInicial();
-            }
-            catch (Exception ex)
-            {
-            }
-        }
-        #endregion
-
         #region "MétodoValidarCampos"
         /// <summary>
         /// Método que me valida que ingrese un número
@@ -86,35 +50,7 @@ namespace WPEDENorte.Forms
         #endregion
 
         #region "ButtonSearch"
-        private void BtnConsultar_StylusDown_1(object sender, StylusDownEventArgs e)
-        {
-            try
-            {
-                if (!ValidarCampo())
-                {
-                    GrvPpl.Opacity = 0.2;
-                    ModalWindow modal = new ModalWindow("Debe de ingresar una factura",false);
-                    modal.ShowDialog();
-                    GrvPpl.Opacity = 1;
-                }
-                else
-                {
-                    gif.Visibility = Visibility.Visible;
-                    btnConsultar.Visibility = Visibility.Hidden;
-
-                    num = TxtNumero.Text;
-
-                    Task.Run(() =>
-                    {
-                        Consult();
-                    });
-                }
-            }
-            catch (Exception ex)
-            {
-            }
-        }
-
+       
         /// <summary>
         /// Método que me redirecciona a detalles si la consulta es exitosa
         /// </summary>
@@ -124,7 +60,17 @@ namespace WPEDENorte.Forms
         {
             try
             {
-                var types = utilities.GetTypesConsult(num);
+                Facturas types = new Facturas 
+                {
+                    Factura = "1414561",
+                    Valor = "2000",
+                    Contrato = "54211",
+                    Fecha_Emision = "2021/07/28",
+                    Ref_Pago = "4524126",
+                    Pague_Antes_De = "2021/08/30",
+                    Direccion_Suministro = "Calle 31 # 45-11"
+
+                };
 
                 if (types == null)
                 {
@@ -157,13 +103,51 @@ namespace WPEDENorte.Forms
         }
         #endregion
 
-        #region "Teclado"
-        /// <summary>
-        /// Botón que me elimina todo el texto
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ImgDeleteAll_StylusDown(object sender, StylusDownEventArgs e)
+     
+
+        private void BtnBack_TouchDown(object sender, TouchEventArgs e)
+        {
+            MenuWindow menu = new MenuWindow();
+            menu.Show();
+            this.Close();
+        }
+
+
+        private void BtnExit_TouchDown(object sender, TouchEventArgs e)
+        {
+            Utilities.GoToInicial();
+        }
+
+        private void btnConsultar_TouchDown(object sender, TouchEventArgs e)
+        {
+            try
+            {
+                if (!ValidarCampo())
+                {
+                    GrvPpl.Opacity = 0.2;
+                    ModalWindow modal = new ModalWindow("Debe de ingresar una factura", false);
+                    modal.ShowDialog();
+                    GrvPpl.Opacity = 1;
+                }
+                else
+                {
+                    gif.Visibility = Visibility.Visible;
+                    btnConsultar.Visibility = Visibility.Hidden;
+
+                    num = TxtNumero.Text;
+
+                    Task.Run(() =>
+                    {
+                        Consult();
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void ImgDeleteAll_TouchDown(object sender, TouchEventArgs e)
         {
             try
             {
@@ -174,12 +158,7 @@ namespace WPEDENorte.Forms
             }
         }
 
-        /// <summary>
-        /// Botón coge el tag y me lo pinta el valor 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Keyboard_StylusDown(object sender, StylusDownEventArgs e)
+        private void Img0_TouchDown(object sender, TouchEventArgs e)
         {
             try
             {
@@ -192,12 +171,7 @@ namespace WPEDENorte.Forms
             }
         }
 
-        /// <summary>
-        /// Botón que me elimina el ultimo regristro ingresado
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ImgDelete_StylusDown(object sender, StylusDownEventArgs e)
+        private void ImgDelete_TouchDown(object sender, TouchEventArgs e)
         {
             try
             {
@@ -212,6 +186,5 @@ namespace WPEDENorte.Forms
             {
             }
         }
-        #endregion
     }
 }

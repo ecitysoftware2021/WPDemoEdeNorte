@@ -78,44 +78,6 @@ namespace WPEDENorte.Forms
         #endregion
 
         #region Events
-        private void btnCancelar_PreviewStylusDown(object sender, StylusDownEventArgs e)
-        {
-            try
-            {
-                //this.Opacity = 0.6;
-                //Utilities.Loading(frmLoading, true, this);
-
-                //Utilities.control.StopAceptance();
-
-                //if (PaymentViewModel.ValorIngresado > 0)
-                //{
-                //    Utilities.DispenserVal = PaymentViewModel.ValorIngresado;
-                //    Utilities.control.callbackTotalOut = totalOut =>
-                //    {
-                //        Cancelled();
-                //    };
-
-                //    Utilities.control.callbackOut = quiantityOut =>
-                //    {
-                //        Cancelled();
-                //    };
-
-                //    Utilities.control.callbackError = error =>
-                //    {
-                //        Utilities.SaveLogDispenser(ControlPeripherals.log);
-                //    };
-
-                //    Utilities.control.StartDispenser(Utilities.DispenserVal);
-                //}
-                //else
-                //{
-                    Utilities.GoToInicial();
-                //}
-            }
-            catch (Exception ex)
-            {
-            }
-        }
         #endregion
 
         #region Methods
@@ -261,7 +223,8 @@ namespace WPEDENorte.Forms
                     {
                         Utilities.Loading(frmLoading, false, this);
                         PaySuccessfulWindow paySuccessful = new PaySuccessfulWindow();
-                        paySuccessful.ShowDialog();
+                        paySuccessful.Show();
+                        this.Close();
                     });
                     GC.Collect();
                 });

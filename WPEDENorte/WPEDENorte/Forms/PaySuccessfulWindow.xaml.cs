@@ -34,16 +34,23 @@ namespace WPEDENorte.Forms
             utilities.ImprimirComprobante();
             Task.Run(() =>
             {
-                Close();
+                Closes();
             });
         }
 
-        private void Close()
+        private void Closes()
         {
             try
             {
                 Thread.Sleep(6000);
-                Utilities.GoToInicial();
+
+                Dispatcher.Invoke(() =>
+                {
+                    MenuWindow paySuccessful = new MenuWindow();
+                    paySuccessful.Show();
+                    this.Close();
+                });
+                GC.Collect();
             }
             catch (Exception ex)
             {

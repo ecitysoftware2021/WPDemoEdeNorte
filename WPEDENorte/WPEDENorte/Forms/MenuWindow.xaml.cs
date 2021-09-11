@@ -35,29 +35,11 @@ namespace WPEDENorte.Forms
         }
         #endregion
 
-        #region "Buttons"
-
-        #endregion
-
-        private void BtnPayFactura_PreviewStylusDown(object sender, StylusDownEventArgs e)
+        private void BtnPayFactura_TouchDown(object sender, TouchEventArgs e)
         {
-            try
-            {
-                SearchWindow search = new SearchWindow();
-                search.Show();
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-            }
-        }
-
-        private void Image_PreviewStylusDown(object sender, StylusDownEventArgs e)
-        {
-            this.Opacity = 0.3;
-            ModalWindow modal = new ModalWindow("En este momento no se encuentra disponible este servicio", false);
-            modal.ShowDialog();
-            this.Opacity = 1;
+            SearchWindow search = new SearchWindow();
+            search.Show();
+            this.Close();
         }
     }
 }
