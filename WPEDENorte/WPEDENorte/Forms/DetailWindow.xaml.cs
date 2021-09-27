@@ -81,7 +81,19 @@ namespace WPEDENorte.Forms
 
         private void BtnPagar_PreviewStylusDown(object sender, StylusDownEventArgs e)
         {
-            decimal valor = Convert.ToDecimal(txtValor.Text.Trim().Replace("RD $ ","").Replace(",", "").Replace(".", ""));
+            //decimal valor = Convert.ToDecimal(txtValor.Text.Trim().Replace("RD $ ","").Replace(",", "").Replace(".", ""));
+            decimal valor = Convert.ToDecimal(txtVlrpago.Text.Trim().Replace("RD $ ","").Replace(",", "").Replace(".", ""));
+
+            //if (valor < Convert.ToDecimal(txtValor.Text))
+            //{ 
+               
+            //}
+            
+            //else
+            //{
+
+            //}
+
 
             PayWindow pay = new PayWindow(valor);
             pay.Show();
@@ -146,10 +158,20 @@ namespace WPEDENorte.Forms
                 GRV8.Visibility = Visibility.Hidden;
             }
         }
-    }
 
+        private void TextBox_TouchDown(object sender, TouchEventArgs e)
+        {
+            Utilities.OpenKeyboard(true, sender as TextBox, this);
+        }
+    }
+                                
     public class Background
     {
        public string background { get; set; }
     }
+
+
+    //public ICommand btnPagarCommand() { 
+    //    get
+    //}
 }

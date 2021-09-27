@@ -41,15 +41,15 @@ namespace WPEDENorte.Forms
 
         #endregion
 
-        #region L oadMethods
+        #region LoadMethods
         public PayWindow(decimal value)
         {
             InitializeComponent();
 
             try
             {
-                this.value = 22000;
-                Utilities.PayVal = Utilities.RoundValue(this.value); 
+                //this.value = 22000;
+                Utilities.PayVal = Utilities.RoundValue(value); 
                 OrganizeValues();
                 frmLoading = new ModalWindow("", true);
                 utilities = new Utilities();

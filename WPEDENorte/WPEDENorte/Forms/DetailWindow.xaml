@@ -57,8 +57,14 @@
                 </Button.BorderThickness>
             </Button>
         </Grid>
-        <Border Name="Border" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Visible" BorderThickness="10,10,10,10" CornerRadius="30,30,30,30" Margin="110,0,90,200" Background="White">
-            <Grid>
+        <Border 
+            Name="Border" Grid.Row="2" 
+            Grid.Column="0" Grid.ColumnSpan="2"
+            Visibility="Visible" 
+            BorderThickness="10,10,10,10" 
+            CornerRadius="30,30,30,30" 
+            Margin="110,0,90,200" Background="White">
+            <Grid HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -75,107 +81,133 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Grid Grid.ColumnSpan="2">
+
+                <TextBlock 
+                    Text="DETALLES DE LA FACTURA"
+                    TextWrapping="Wrap"
+                    TextAlignment="Justify"
+                    FontSize="60"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Margin="0,0,0,0"
+                    Grid.ColumnSpan="2"
+                />
+
+
+                <TextBlock 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="0,0,0,0"
+                    TextAlignment="Center"
+                    TextWrapping="Wrap"
+                    Text="Valor Factura"
+                    FontSize="40"
+                    FontWeight="Bold"                   
+                    Foreground="#606060"
+                    Grid.Row="2" Grid.ColumnSpan="2"
+                />
+
+                <StackPanel 
+                    Orientation="Vertical"
+                     Grid.Row="3" Grid.ColumnSpan="2"
+                    Grid.RowSpan="3">
+                
                     <TextBlock 
-                       Text="DETALLES DE LA FACTURA"
-                       TextWrapping="Wrap"
-                       TextAlignment="Justify"
-                       FontSize="60"
-                       FontWeight="Bold"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Top"
-                       Margin="0,0,0,0"
-                    />
-                </Grid> 
-                <Grid Grid.Row="2" Grid.ColumnSpan="2">
+                        Name="txtValor"
+                        Text="{Binding Valor}"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Margin="0" 
+                        FontSize="50"
+                        TextAlignment="Center"
+                       />
+
                     <TextBlock 
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       Margin="0,0,50,0"
-                       TextAlignment="Center"
-                       TextWrapping="Wrap"
-                       Text="TOTAL A PAGAR"
-                       FontSize="40"
-                       FontWeight="Bold"                   
-                       Foreground="#606060"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="0"
+                    TextAlignment="Center"
+                    TextWrapping="Wrap"
+                    Text="Ingrese valor a Pagar"
+                    FontSize="40"
+                    FontWeight="Bold"                   
+                    Foreground="#606060"
+                    
                     />
-                </Grid>
-                <Grid Grid.Row="3" Grid.ColumnSpan="2">
-                    <TextBlock 
-                       Name="txtValor"
-                       Grid.Column="1"
-                       Grid.Row="10"
-                       Text="{Binding Valor}"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Top"
-                       Margin="0,0,50,0" 
-                       FontSize="50"
-                       TextAlignment="Center"
-                    />
-                </Grid>
-                <Grid Grid.Row="4" Grid.Column="0">
-                    <TextBlock 
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Center"
-                       Margin="50,0,0,0"
-                       TextAlignment="Center"
-                       TextWrapping="Wrap"
-                       Text="NRO. FACTURA"
-                       Grid.Row="1"
-                       FontSize="40"
-                       FontWeight="Bold"
-                       Foreground="#606060"
-                    />
-                </Grid>
-                <Grid Grid.Row="4" Grid.Column="1">
-                    <TextBlock 
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Center"
-                       Grid.Row="2"
-                       Margin="50,0,0,0" 
-                       FontSize="35"
-                       TextAlignment="Left"
-                       Text="{Binding Factura}"
-                       TextWrapping="Wrap"
-                    />
-                </Grid>
-                <Grid Grid.Row="5" Grid.Column="0">
-                    <TextBlock 
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Center"
-                       Margin="50,0,0,0"
-                       TextAlignment="Center"
-                       TextWrapping="Wrap"
-                       Text="CONTRATO"
-                       Grid.Row="1"
-                       FontSize="40"
-                       FontWeight="Bold"
-                       Foreground="#606060"
-                    />
-                </Grid>
-                <Grid Grid.Row="5" Grid.Column="1">
-                    <TextBlock 
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Center"
-                       Grid.Row="2"
-                       Margin="50,0,0,0" 
-                       FontSize="35"
-                       TextAlignment="Left"
-                       Text="{Binding Contrato}"
-                       TextWrapping="Wrap"
-                    />
-                </Grid>
-                <Grid Grid.Row="6" Grid.ColumnSpan="2">
-                    <Image
-                        x:Name="btnDetalle"
-                        Source="/Images/Buttons/b-detalle.png"
-                        Stretch="Uniform"
-                        Height="60"
-                        TouchDown="btnDetalle_TouchDown"
-                    />
-                </Grid>
-                <Grid Grid.Row="7" Grid.Column="0" Name="GRV1" Visibility="Hidden">
+                    <TextBox Width="200"
+                             FontSize="30"
+                             HorizontalContentAlignment="Center"
+                             TouchDown="TextBox_TouchDown"
+                             Name="txtVlrpago"/>
+
+                </StackPanel>
+
+
+                
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="50,0,0,0"
+                    TextAlignment="Center"
+                    TextWrapping="Wrap"
+                    Text="NRO. FACTURA"
+                    FontSize="40"
+                    FontWeight="Bold"
+                    Foreground="#606060"
+                    Grid.Row="5" Grid.Column="0"
+                        
+                />
+
+                <TextBlock 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="50,0,0,0" 
+                    FontSize="35"
+                    TextAlignment="Left"
+                    Text="{Binding Factura}"
+                    TextWrapping="Wrap"
+                    Grid.Row="5" Grid.Column="1"
+                />
+
+
+                <TextBlock 
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="50,0,0,0"
+                    TextAlignment="Center"
+                    TextWrapping="Wrap"
+                    Text="CONTRATO"     
+                    FontSize="40"
+                    FontWeight="Bold"
+                    Foreground="#606060"
+                    Grid.Row="6" Grid.Column="0"
+                />
+
+                <TextBlock 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"     
+                    Margin="50,0,0,0" 
+                    FontSize="35"
+                    TextAlignment="Left"
+                    Text="{Binding Contrato}"
+                    TextWrapping="Wrap"
+                    Grid.Row="6" Grid.Column="1"
+                />
+
+                <Image
+                    x:Name="btnDetalle"
+                    Source="/Images/Buttons/b-detalle.png"
+                    Stretch="Uniform"
+                    Height="60"
+                    TouchDown="btnDetalle_TouchDown"
+                    Grid.Row="7" Grid.ColumnSpan="2"
+                />
+
+                <Grid Grid.Row="8" Grid.Column="0" Name="GRV1" Visibility="Hidden">
                     <TextBlock 
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
@@ -189,9 +221,9 @@
                        Foreground="#606060"
                     />
                 </Grid>
-                <Grid Grid.Row="7" Grid.Column="1"  Name="GRV2" Visibility="Hidden">
+                <Grid Grid.Row="8" Grid.Column="1"  Name="GRV2" Visibility="Hidden">
                     <TextBlock 
-                       HorizontalAlignment="Left"
+                       HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        Grid.Row="2"
                        Margin="50,0,0,0" 
@@ -201,7 +233,8 @@
                        TextWrapping="Wrap"
                     />
                 </Grid>
-                <Grid Grid.Row="8" Grid.Column="0"  Name="GRV3" Visibility="Hidden">
+
+                <Grid Grid.Row="9" Grid.Column="0"  Name="GRV3" Visibility="Hidden">
                     <TextBlock 
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
@@ -215,9 +248,10 @@
                        Foreground="#606060"
                     />
                 </Grid>
-                <Grid Grid.Row="8" Grid.Column="1"  Name="GRV4" Visibility="Hidden">
+
+                <Grid Grid.Row="9" Grid.Column="1"  Name="GRV4" Visibility="Hidden">
                     <TextBlock 
-                       HorizontalAlignment="Left"
+                       HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        Grid.Row="2"
                        Margin="50,0,0,0" 
@@ -227,7 +261,7 @@
                        TextWrapping="Wrap"
                     />
                 </Grid>
-                <Grid Grid.Row="9" Grid.Column="0" Name="GRV5" Visibility="Hidden">
+                <Grid Grid.Row="10" Grid.Column="0" Name="GRV5" Visibility="Hidden">
                     <TextBlock 
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
@@ -241,9 +275,9 @@
                        Foreground="#606060"
                     />
                 </Grid>
-                <Grid Grid.Row="9" Grid.Column="1"  Name="GRV6" Visibility="Hidden">
+                <Grid Grid.Row="10" Grid.Column="1"  Name="GRV6" Visibility="Hidden">
                     <TextBlock 
-                       HorizontalAlignment="Left"
+                       HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        Grid.Row="2"
                        Margin="50,0,0,0" 
@@ -253,7 +287,7 @@
                        TextWrapping="Wrap"
                     />
                 </Grid>
-                <Grid Grid.Row="10" Grid.Column="0"  Name="GRV7" Visibility="Hidden">
+                <Grid Grid.Row="11" Grid.Column="0"  Name="GRV7" Visibility="Hidden">
                     <TextBlock 
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
@@ -267,9 +301,9 @@
                        Foreground="#606060"
                     />
                 </Grid>
-                <Grid Grid.Row="10" Grid.Column="1"  Name="GRV8" Visibility="Hidden">
+                <Grid Grid.Row="11" Grid.Column="1"  Name="GRV8" Visibility="Hidden">
                     <TextBlock 
-                       HorizontalAlignment="Left"
+                       HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        Grid.Row="2"
                        Margin="50,0,0,0" 
@@ -373,7 +407,7 @@
             </Grid>
         </Border>
 
-        <materialDesign:TransitioningContent  OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:1.2}" Grid.Row="2" Grid.ColumnSpan="2" Visibility="Visible">
+        <materialDesign:TransitioningContent  OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:1.2}" Grid.Row="1" Grid.ColumnSpan="2" Visibility="Visible" Margin="-10,58,10,92" Grid.RowSpan="2">
             <materialDesign:TransitioningContent.OpeningEffects>
                 <materialDesign:TransitionEffect Kind="SlideInFromBottom"  Duration="0:0:1.9"/>
             </materialDesign:TransitioningContent.OpeningEffects>
@@ -386,8 +420,7 @@
                    Height="120"
                    TabIndex="1"
                    Margin="0,0,0,50"
-                   PreviewStylusDown="BtnPagar_PreviewStylusDown"
-                   >
+                   PreviewStylusDown="BtnPagar_PreviewStylusDown">
                 <Button.Background>
                     <ImageBrush ImageSource="/Images/Buttons/b-aceptar.png" Stretch="Fill" />
                 </Button.Background>

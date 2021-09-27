@@ -204,7 +204,7 @@ namespace WPEDENorte.Classes
 
                     var json = JsonConvert.SerializeObject(types);
 
-                        if (types.Count() > 0)
+                    if (types.Count() > 0)
                     {
                         foreach (var type in types)
                         {
@@ -231,6 +231,25 @@ namespace WPEDENorte.Classes
             catch (Exception ex)
             {
                 return null;
+            }
+        }
+
+        public static void OpenKeyboard(bool keyBoard_Numeric, object sender, object thisView, int x = 0, int y = 0)
+        {
+            try
+            {
+                WPKeyboard.Keyboard.InitKeyboard(new WPKeyboard.Keyboard.DataKey
+                {
+                    control = sender,
+                    userControl = thisView is System.Windows.Controls.UserControl ? thisView as System.Windows.Controls.UserControl : null,
+                    eType = (keyBoard_Numeric == true) ? WPKeyboard.Keyboard.EType.Numeric : WPKeyboard.Keyboard.EType.Standar,
+                    window = thisView is Window ? thisView as Window : null,
+                    X = x,
+                    Y = y,
+                });
+            }
+            catch (Exception ex)
+            {
             }
         }
     }

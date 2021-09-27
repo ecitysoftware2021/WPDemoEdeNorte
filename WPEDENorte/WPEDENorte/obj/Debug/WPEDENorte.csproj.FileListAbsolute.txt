@@ -152,7 +152,6 @@ C:\Users\H-81\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\WP
 C:\Users\H-81\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\H-81\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\WPEDENorte_MarkupCompile.cache
 C:\Users\H-81\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\WPEDENorte_MarkupCompile.lref
-C:\Users\H-81\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\WPEDENorte.csprojAssemblyReference.cache
 C:\Users\H-81\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\bin\Debug\LocalBD\EDENorteBD.mdf
 C:\Users\H-81\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\bin\Debug\LocalBD\EDENorteBD_log.ldf
 C:\Users\H-81\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\bin\Debug\WPEDENorte.exe.config
@@ -188,3 +187,4 @@ C:\Users\H-81\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\WP
 C:\Users\H-81\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\WPEDENorte.csproj.CopyComplete
 C:\Users\H-81\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\WPEDENorte.exe
 C:\Users\H-81\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\WPEDENorte.pdb
+C:\Users\H-81\Documents\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\WPEDENorte.csprojAssemblyReference.cache
