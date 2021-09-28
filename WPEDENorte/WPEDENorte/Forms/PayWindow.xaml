@@ -22,8 +22,6 @@
             <RowDefinition Height="900" />
             <RowDefinition Height="400"/>
         </Grid.RowDefinitions>
-
-
         <Label Content="VALOR A PAGAR" 
                    FontFamily="pack://application:,,,/fonts/#Ubuntu"
                    Foreground="#606060"
@@ -108,6 +106,37 @@
         <Run Foreground="Gray" Text="RD"/>
         <Run Text="{Binding ValorSobrante, StringFormat={}{0:C0}}"/>
         </TextBlock>
+
+        <Label Content="Valor Acomulado" 
+                   FontFamily="pack://application:,,,/fonts/#Ubuntu"
+                   Foreground="#606060"
+                   Margin="200,612,0,209" 
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   FontSize="60" 
+                   Grid.Row="2" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.102"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBlock  
+                   
+                   FontFamily="pack://application:,,,/fonts/#Ubuntu"
+                   Foreground="#606060"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Margin="700,632,0,209"
+                   FontSize="50" 
+                   Grid.Row="2" RenderTransformOrigin="0.393,-0.288">
+        <Run Foreground="Gray" Text="RD"/>
+        <Run Text="{Binding ValorSobrante, StringFormat={}{0:C0}}"/>
+        </TextBlock>
+
         <Image Name="btnCancelar"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top" 

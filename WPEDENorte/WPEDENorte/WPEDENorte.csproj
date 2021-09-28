@@ -110,6 +110,9 @@
     <Compile Include="Classes\RequestAuth.cs" />
     <Compile Include="Classes\ResponseAuth.cs" />
     <Compile Include="Classes\Uptake.cs" />
+    <Compile Include="Forms\ConfirmationPay.xaml.cs">
+      <DependentUpon>ConfirmationPay.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PaySuccessfulWindow.xaml.cs">
       <DependentUpon>PaySuccessfulWindow.xaml</DependentUpon>
     </Compile>
@@ -196,6 +199,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Forms\ConfigurateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\ConfirmationPay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
