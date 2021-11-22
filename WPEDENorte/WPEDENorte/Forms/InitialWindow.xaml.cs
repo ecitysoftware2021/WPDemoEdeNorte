@@ -103,5 +103,20 @@ namespace WPEDENorte.Forms
         }
 
         #endregion
+
+  
+
+        private void Grid_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                MenuWindow Menu = new MenuWindow();
+                Menu.Show();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
     }
 }

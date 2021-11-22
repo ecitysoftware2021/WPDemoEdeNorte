@@ -13,15 +13,18 @@
     <Window.Background>
         <ImageBrush ImageSource="../Images/Background/f-menu.jpg"/>
     </Window.Background>
-    <Grid Name="GrvPpal">
+    <!--<Grid Name="GrvPpal">
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
+        
         <Image Source="/Images/Buttons/b-salir.png"
                HorizontalAlignment="Right"
                VerticalAlignment="Top"
@@ -36,6 +39,7 @@
                 <materialDesign:TransitionEffect Kind="ExpandIn" Duration="0:0:1.5"/>
             </materialDesign:TransitioningContent.OpeningEffects>
             <Image Source="../Images/Buttons/b-electricidad.png"
+               
                VerticalAlignment="Center"
                HorizontalAlignment="Left"
                Margin="60,0,0,0"
@@ -50,11 +54,61 @@
                 <materialDesign:TransitionEffect Kind="ExpandIn"  Duration="0:0:1.5"/>
             </materialDesign:TransitioningContent.OpeningEffects>
             <Image Source="/Images/Buttons/b-ecologica.png"
-               Grid.Row="1"
-               Grid.RowSpan="2"
+               Grid.Row="2"
+               Grid.Column="2"
                VerticalAlignment="Center"
                HorizontalAlignment="Right"
-               Margin="0,0,60,0"
+               Width="460"
+               PreviewStylusDown="Image_PreviewStylusDown"
+               />
+        </materialDesign:TransitioningContent>
+    </Grid>-->
+    <Grid Name="GrvPpal">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="/Images/Buttons/b-salir.png"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Top"
+               Grid.Column="1"
+               Name="BtnHome"
+               Margin="0,20,20,0"
+               Width="250"
+               PreviewStylusDown="BtnHome_PreviewStylusDown"/>
+    
+        <materialDesign:TransitioningContent
+            OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:1.2}"
+            Visibility="Visible"
+            Grid.Row="1">
+            <materialDesign:TransitioningContent.OpeningEffects>
+                <materialDesign:TransitionEffect Kind="ExpandIn" Duration="0:0:1.5"/>
+            </materialDesign:TransitioningContent.OpeningEffects>
+            <Image Source="../Images/Buttons/b-electricidad.png"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               Margin="60,0,0,0"
+               Name="BtnPayFactura"               
+               PreviewStylusDown="BtnPayFactura_PreviewStylusDown"
+               PreviewMouseRightButtonDown="BtnPayFactura_PreviewMouseRightButtonDown"
+               Width="500" 
+               />
+        </materialDesign:TransitioningContent>
+
+        <materialDesign:TransitioningContent  OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:1.2}" Visibility="Visible"                                   
+            Grid.Row="1"
+               Grid.Column="1">
+            <materialDesign:TransitioningContent.OpeningEffects>
+                <materialDesign:TransitionEffect Kind="ExpandIn"  Duration="0:0:1.5"/>
+            </materialDesign:TransitioningContent.OpeningEffects>
+            <Image Source="/Images/Buttons/b-ecologica.png"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"
                Width="460"
                PreviewStylusDown="Image_PreviewStylusDown"
                />

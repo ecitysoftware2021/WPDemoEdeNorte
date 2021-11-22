@@ -59,5 +59,20 @@ namespace WPEDENorte.Forms
             modal.ShowDialog();
             this.Opacity = 1;
         }
+
+     
+
+        private void BtnPayFactura_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                SearchWindow search = new SearchWindow();
+                search.Show();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
     }
 }

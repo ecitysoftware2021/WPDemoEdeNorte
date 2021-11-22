@@ -246,6 +246,7 @@
                    Grid.ColumnSpan="2"
                    TabIndex="2"
                    StylusDown="BtnConsultar_StylusDown_1"
+                   PreviewMouseRightButtonDown="btnConsultar_PreviewMouseRightButtonDown"
                    >
                 <Button.Background>
                     <ImageBrush ImageSource="/Images/Buttons/b-consultar.png" Stretch="Fill" />

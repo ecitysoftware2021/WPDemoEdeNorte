@@ -213,5 +213,34 @@ namespace WPEDENorte.Forms
             }
         }
         #endregion
+
+        private void btnConsultar_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                if (!ValidarCampo())
+                {
+                    GrvPpl.Opacity = 0.2;
+                    ModalWindow modal = new ModalWindow("Debe de ingresar una factura", false);
+                    modal.ShowDialog();
+                    GrvPpl.Opacity = 1;
+                }
+                else
+                {
+                    gif.Visibility = Visibility.Visible;
+                    btnConsultar.Visibility = Visibility.Hidden;
+
+                    num = TxtNumero.Text;
+
+                    Task.Run(() =>
+                    {
+                        Consult();
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
     }
 }
