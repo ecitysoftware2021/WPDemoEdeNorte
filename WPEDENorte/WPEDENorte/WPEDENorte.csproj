@@ -116,6 +116,9 @@
     <Compile Include="Forms\PaySuccessfulWindow.xaml.cs">
       <DependentUpon>PaySuccessfulWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Transactions\Payments\PayWallet.xaml.cs">
+      <DependentUpon>PayWallet.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Services\Api.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -234,6 +237,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Forms\Transactions\Payments\PayWallet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Keyboard\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -308,6 +315,8 @@
     <Resource Include="Images\Keyboard\x.png" />
     <Resource Include="Images\Background\f-para-modales.jpg" />
     <Resource Include="Images\Buttons\b-detalle.png" />
+    <Resource Include="Images\Background\bg-pagoCartera.jpg" />
+    <Resource Include="Images\Others\img-split.png" />
     <Content Include="LocalBD\EDENorteADO.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EDENorteADO.Context.cs</LastGenOutput>

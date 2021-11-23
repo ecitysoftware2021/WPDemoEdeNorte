@@ -238,3 +238,5 @@ C:\Users\Mauricio\Documents\GIT\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\W
 C:\Users\Mauricio\Documents\GIT\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\WPEDENorte.csproj.CopyComplete
 C:\Users\Mauricio\Documents\GIT\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\WPEDENorte.exe
 C:\Users\Mauricio\Documents\GIT\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\WPEDENorte.pdb
+C:\Users\Mauricio\Documents\GIT\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\Forms\Transactions\Payments\PayWallet.g.cs
+C:\Users\Mauricio\Documents\GIT\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\Forms\Transactions\Payments\PayWallet.baml

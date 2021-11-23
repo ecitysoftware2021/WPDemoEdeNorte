@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using WPEDENorte.Classes;
+using WPEDENorte.Forms.Transactions.Payments;
 
 namespace WPEDENorte.Forms
 {
@@ -144,9 +145,9 @@ namespace WPEDENorte.Forms
                     Dispatcher.BeginInvoke((Action)delegate
                     {
                         Utilities.Contrato = num;
-                        DetailWindow detail = new DetailWindow(types);
-                        detail.Show();
-                        this.Close();
+
+                        //DetailWindow detail = new DetailWindow(types);
+                        PayWallet payWallet = new PayWallet();
                     });
                     GC.Collect();
                 }

@@ -80,7 +80,7 @@
                 Foreground="#585858" 
                 />
             
-            <Grid Margin="0,750,0,0">
+            <Grid Margin="0,750,0,0" HorizontalAlignment="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="500" />
                     <RowDefinition Height="*" />
