@@ -96,6 +96,7 @@ namespace WPEDENorte.Forms
 
 
             PayWindow pay = new PayWindow(valor);
+
             pay.Show();
             this.Close();
         }

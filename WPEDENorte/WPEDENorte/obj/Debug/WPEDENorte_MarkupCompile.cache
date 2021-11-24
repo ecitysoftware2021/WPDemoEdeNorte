@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Mauricio\Documents\GIT\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\
+C:\Users\H-81\Documents\edenorte\WPDemoEdeNorte\WPEDENorte\WPEDENorte\obj\Debug\
 WPEDENorte
 none
 false
 DEBUG;TRACE
-C:\Users\Mauricio\Documents\GIT\WPDemoEdeNorte\WPEDENorte\WPEDENorte\App.xaml
-111860007895
+C:\Users\H-81\Documents\edenorte\WPDemoEdeNorte\WPEDENorte\WPEDENorte\App.xaml
+12-912665725
 4329196325
-32448126732
-24519897834
-Forms\ConfigurateWindow.xaml;Forms\ConfirmationPay.xaml;Forms\DetailWindow.xaml;Forms\InitialWindow.xaml;Forms\MenuWindow.xaml;Forms\ModalWindow.xaml;Forms\PaySuccessfulWindow.xaml;Forms\PayWindow.xaml;Forms\SearchWindow.xaml;Forms\Transactions\Payments\PayWallet.xaml;Keyboard\Generic.xaml;
+34-977639129
+24294701283
+Forms\ConfigurateWindow.xaml;Forms\ConfirmationPay.xaml;Forms\DetailWindow.xaml;Forms\InitialWindow.xaml;Forms\MenuWindow.xaml;Forms\ModalWindow.xaml;Forms\PaySuccessfulWindow.xaml;Forms\PayWindow.xaml;Forms\SearchWindow.xaml;Forms\Transactions\Payments\PayWallet.xaml;Keyboard\Generic.xaml;Windows\Alerts\ModalAmountW.xaml;
 
 False
 

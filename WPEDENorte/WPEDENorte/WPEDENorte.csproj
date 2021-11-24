@@ -109,6 +109,7 @@
     <Compile Include="Classes\PaymentViewModel.cs" />
     <Compile Include="Classes\RequestAuth.cs" />
     <Compile Include="Classes\ResponseAuth.cs" />
+    <Compile Include="Classes\TimerGeneric.cs" />
     <Compile Include="Classes\Uptake.cs" />
     <Compile Include="Forms\ConfirmationPay.xaml.cs">
       <DependentUpon>ConfirmationPay.xaml</DependentUpon>
@@ -120,6 +121,9 @@
       <DependentUpon>PayWallet.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\Api.cs" />
+    <Compile Include="Windows\Alerts\ModalAmountW.xaml.cs">
+      <DependentUpon>ModalAmountW.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CLSPrint.cs" />
@@ -245,6 +249,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Windows\Alerts\ModalAmountW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -317,6 +325,7 @@
     <Resource Include="Images\Buttons\b-detalle.png" />
     <Resource Include="Images\Background\bg-pagoCartera.jpg" />
     <Resource Include="Images\Others\img-split.png" />
+    <Resource Include="Images\Background\generico-modal.png" />
     <Content Include="LocalBD\EDENorteADO.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EDENorteADO.Context.cs</LastGenOutput>

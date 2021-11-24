@@ -146,8 +146,10 @@ namespace WPEDENorte.Forms
                     {
                         Utilities.Contrato = num;
 
-                        //DetailWindow detail = new DetailWindow(types);
-                        PayWallet payWallet = new PayWallet();
+                        DetailWindow detail = new DetailWindow(types);
+
+                        PayWallet payWalletl = new PayWallet(types);
+                        payWalletl.ShowDialog();
                     });
                     GC.Collect();
                 }
