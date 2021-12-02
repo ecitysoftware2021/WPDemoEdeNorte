@@ -24,7 +24,7 @@ namespace WPEDENorte.Forms
         private ObservableCollection<Background> fondo;
         private int num;
 
-        public DetailWindow(Facturas datos)
+        public DetailWindow(List<Facturas> listaTotalFacturas)
         {
             InitializeComponent();
             fondo = new ObservableCollection<Background>();
@@ -32,15 +32,15 @@ namespace WPEDENorte.Forms
             num = 1;
             ChangeBackground();
 
-            try
-            {
-                datos.Valor = String.Format("RD {0:C0}", Convert.ToDecimal(datos.Valor));
+            //try
+            //{
+            //    datos.valor = string.format("rd {0:c0}", convert.todecimal(datos.valor));
 
-                this.Border.DataContext = datos;
-            }
-            catch (Exception ex)
-            {
-            }
+            //    this.border.datacontext = datos;
+            //}
+            //catch (exception ex)
+            //{
+            //}
         }
 
         #region "HeadersButtons"
@@ -83,17 +83,6 @@ namespace WPEDENorte.Forms
         {
             //decimal valor = Convert.ToDecimal(txtValor.Text.Trim().Replace("RD $ ","").Replace(",", "").Replace(".", ""));
             decimal valor = Convert.ToDecimal(txtVlrpago.Text.Trim().Replace("RD $ ","").Replace(",", "").Replace(".", ""));
-
-            //if (valor < Convert.ToDecimal(txtValor.Text))
-            //{ 
-               
-            //}
-            
-            //else
-            //{
-
-            //}
-
 
             PayWindow pay = new PayWindow(valor);
 
@@ -170,9 +159,4 @@ namespace WPEDENorte.Forms
     {
        public string background { get; set; }
     }
-
-
-    //public ICommand btnPagarCommand() { 
-    //    get
-    //}
 }

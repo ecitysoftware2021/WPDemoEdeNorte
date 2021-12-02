@@ -24,19 +24,27 @@ namespace WPEDENorte.Windows.Alerts
     {
         private ObservableCollection<Background> fondo;
         private int num;
-        public ModalAmountW(Facturas facturas)
-        {
+        private List<Facturas> facturas;
+        private Decimal totalAPagar;
+        private string tipoFacturasAPagar;
 
+        public ModalAmountW(string totalAPagar, string tipoFacturasAPagar)
+        {
             InitializeComponent();
             fondo = new ObservableCollection<Background>();
             this.DataContext = fondo;
             num = 1;
+            this.tipoFacturasAPagar = tipoFacturasAPagar;
+            this.totalAPagar = Convert.ToDecimal(totalAPagar);
+
             ChangeBackground();
 
             try
             {
-            //    txtval.Text = facturas.Valor;
-                facturas.Valor = String.Format("RD {0:C0}", Convert.ToDecimal(facturas.Valor));
+                LimitarEscrituraSegunTipoFactura(totalAPagar, tipoFacturasAPagar);
+
+                txtval.Text = totalAPagar;
+
                 this.GridData.DataContext = facturas;
             }
             catch (Exception ex)
@@ -44,24 +52,21 @@ namespace WPEDENorte.Windows.Alerts
             }
         }
 
-        private void BtnCancel_TouchDown(object sender, MouseButtonEventArgs e)
-        {
-            ModalAmountW modalAmountW = new ModalAmountW(null);
-            modalAmountW.Close();
-        }
-
-        private void TxtVal_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void btnAceptar_TouchDown_1(object sender, TouchEventArgs e)
         {
-            decimal valor = Convert.ToDecimal(txtval.Text.Trim().Replace("RD $ ", "").Replace(",", "").Replace(".", ""));
-            PayWindow pay = new PayWindow(valor);
+            decimal valor = Convert.ToDecimal(txtval.Text);
 
-            pay.Show();
-            this.Close();
+            if (valor > totalAPagar)
+            {
+                txtPagoParcialValido.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                PayWindow pay = new PayWindow(valor);
+
+                pay.Show();
+                this.Close();
+            }
         }
 
         private void ChangeBackground()
@@ -91,6 +96,35 @@ namespace WPEDENorte.Windows.Alerts
             }
             catch (Exception ex)
             {
+            }
+        }
+
+        private void BtnCancel_TouchDown_1(object sender, TouchEventArgs e)
+        {
+            DialogResult = true;
+        }
+
+        private void LimitarEscrituraSegunTipoFactura(string totalAPagar, string tipoFacturasAPagar)
+        {
+            string TxtPagoEditable = "Ingrese el valor que desea consignar";
+            string TxtPagoNoEditable = "Valor a pagar";
+
+            if(tipoFacturasAPagar == "Activas")
+            {
+                txtval.IsReadOnly = false;
+                txtMsInformacion.Text = TxtPagoEditable;
+            }
+            else {
+                txtval.IsReadOnly = true;
+                txtMsInformacion.Text = TxtPagoNoEditable;
+            }
+        }
+
+        private void txtval_TouchDown(object sender, TouchEventArgs e)
+        {
+            if(tipoFacturasAPagar == "Activas")
+            {
+                Utilities.OpenKeyboard(true, sender, this, 800, 1000);
             }
         }
     }

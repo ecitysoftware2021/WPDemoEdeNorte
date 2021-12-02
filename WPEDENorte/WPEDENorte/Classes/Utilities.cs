@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using System.IO;
@@ -192,38 +193,46 @@ namespace WPEDENorte.Classes
             }
         }
 
-        public Facturas GetTypesConsult(string reference)
+        public List<Facturas> GetTypesConsult(string reference)
         {
             try
             {
-                Facturas facturas = new Facturas();
-
                 using (var conexion = new EDENorteBDEntities())
                 {
-                    var types = conexion.Tbl_Facturas.ToList();
+                    List<Facturas> facturasCliente = new List<Facturas>();
 
-                    var json = JsonConvert.SerializeObject(types);
+
+                    //8142014144
+                    string consultaFacturasCliente = "SELECT * FROM Tbl_Facturas WHERE Ref_Pago = '" + reference + "'";
+
+                    var types = conexion.Tbl_Facturas.SqlQuery(consultaFacturasCliente).ToList();
+                    //var types = conexion.Tbl_Facturas.ToList();
 
                     if (types.Count() > 0)
                     {
                         foreach (var type in types)
                         {
-                            if (reference == type.Contrato)
+                            if (reference == type.Ref_Pago)
                             {
-                                facturas.Direccion_Suministro = type.Direccion_Suministro;
-                                facturas.Factura = type.Factura;
-                                facturas.Fecha_Emision = type.Fecha_Emision;
-                                facturas.Pague_Antes_De = type.Pague_Antes_De;
-                                facturas.Ref_Pago = type.Ref_Pago;
-                                facturas.RNC_Cliente = type.RNC_Cliente;
-                                facturas.Titular_De_Pago = type.Titular_De_Pago;
-                                facturas.Valida_Hasta = type.Valida_Hasta;
-                                facturas.Valor = type.Total_Pagar;
-                                facturas.Contrato = type.Contrato;
+                                Facturas factura = new Facturas();
 
-                                return facturas;
+                                factura.Direccion_Suministro = type.Direccion_Suministro;
+                                factura.Factura = type.Factura;
+                                factura.Fecha_Emision = type.Fecha_Emision;
+                                factura.Pague_Antes_De = type.Pague_Antes_De;
+                                factura.Ref_Pago = type.Ref_Pago;
+                                factura.RNC_Cliente = type.RNC_Cliente;
+                                factura.Titular_De_Pago = type.Titular_De_Pago;
+                                factura.Valida_Hasta = type.Valida_Hasta;
+                                factura.Total_Pagar = type.Total_Pagar;
+                                factura.Contrato = type.Ref_Pago;
+
+                                facturasCliente.Add(factura);
+                                //return facturas;
                             }
                         }
+
+                        return facturasCliente;
                     }
                 }
                 return null;

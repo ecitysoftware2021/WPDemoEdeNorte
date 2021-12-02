@@ -49,7 +49,7 @@ namespace WPEDENorte.Forms
                         //if (data.State)
                         //{
                         //    if (data.StateAceptance && data.StateDispenser)
-                        //    {
+                        //   
                         //        Utilities.control.callbackError = error =>
                         //        {
                         //            GetToken();

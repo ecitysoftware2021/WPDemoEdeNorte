@@ -144,8 +144,10 @@ namespace WPEDENorte.Forms
                 {
                     Dispatcher.BeginInvoke((Action)delegate
                     {
+                        this.Close();
                         Utilities.Contrato = num;
 
+                        // TODO: Revisar valides vista
                         DetailWindow detail = new DetailWindow(types);
 
                         PayWallet payWalletl = new PayWallet(types);
@@ -229,6 +231,7 @@ namespace WPEDENorte.Forms
                     GrvPpl.Opacity = 1;
                 }
                 else
+
                 {
                     gif.Visibility = Visibility.Visible;
                     btnConsultar.Visibility = Visibility.Hidden;

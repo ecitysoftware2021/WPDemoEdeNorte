@@ -6,13 +6,14 @@
              xmlns:local="clr-namespace:WPEDENorte.Forms.Transactions.Payments"
              mc:Ignorable="d" 
              Title="ConfigurateWindow" WindowStyle="None"
-                WindowState="Maximized"
-                Height="2064.095"
-                Width="1250.599"
+             WindowState="Maximized"
+             Height="2064.095"
+             Width="1250.599"
              d:DesignHeight="1920"
-             d:DesignWidth="1080">
-    <Grid>
-
+             d:DesignWidth="1080"
+            Loaded="Window_Loaded"
+        >
+    <Grid >
         <Grid.Background>
             <ImageBrush ImageSource="/Images/Background/f-menu.jpg"/>
         </Grid.Background>
@@ -43,38 +44,37 @@
 
         <Grid   
             Name="GridData" Grid.Row="2"
-            Grid.ColumnSpan="2">
+            Grid.ColumnSpan="2" Margin="0,8,-0.5,-8">
             <Grid.RowDefinitions>
-                <RowDefinition Height="5*"/>
-                <RowDefinition Height="23*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock
-                    Text="Seleccione una opción a Pagar"
-                    FontWeight="Bold"
-                    Foreground="#33D1FF"
-                    FontFamily="Nyriad Pro"
-                    FontSize="40" 
-                    Margin="337,0"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Top"
+                Text="Seleccione una opción a Pagar"
+                FontWeight="Bold"
+                Foreground="#33D1FF"
+                FontFamily="Nyriad Pro"
+                FontSize="40" 
+                Margin="0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
                 Grid.ColumnSpan="2"
-                    Height="50"/>
-
+                Height="50"/>
+            
             <Grid
                     Tag="1"
                     Name="brd_valorVencido"
                     VerticalAlignment="Top"
                     Background="Transparent"
                     HorizontalAlignment="Center"
-                    Margin="156,70,156,0"
-                    Height="200"
-                    Width="310"
+                    Margin="10,110,10,0"
                     IsEnabled="True"
-                    MouseDown="Border_TouchDown" Grid.RowSpan="2">
+                    >
                 <Border
                         BorderBrush="#33D1FF"
                         BorderThickness="2"
@@ -86,8 +86,9 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
+                        <StackPanel>
                         <TextBlock
-                            Text="Valor Vencido"
+                            Text="Factura 23/10/2021"
                             FontWeight="Bold"
                             FontFamily="Nyriad Pro"
                             FontSize="40" 
@@ -95,16 +96,26 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Top"
                             Height="50"/>
+                            <TextBlock
+                            Text="Estado: Vencida"
+                            FontWeight="Bold"
+                            FontFamily="Nyriad Pro"
+                            FontSize="30" 
+                            Margin="0,10,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Height="50"/>
+                        </StackPanel>
                         <Image 
                             Source="/Images/Others/img-split.png"
                             VerticalAlignment="Top"
                             Width="600"
                             Margin="0,60,0,0" />
 
-                        <TextBox 
+                                <!--Tag= "{Binding stateAccount.SaldoVencido}"-->
+                        <TextBlock
                             Grid.Row="1"
-                                Text="********" 
-                                Tag= "{Binding stateAccount.SaldoVencido}"
+                                Text="" 
                                 HorizontalAlignment="Center"
                                 Name="txt_valorVencido"
                                 FontSize="30" 
@@ -112,23 +123,15 @@
                                 FontFamily="Myriad Pro"
                                 Foreground="Gray"
                                 VerticalAlignment="Center"
-                                TextAlignment="Center" 
-                                IsReadOnly="True"
-                                MouseDown="txt_valor_TouchDown"
+                                TextAlignment="Center"
                                 >
-                            <TextBox.Resources>
-                                <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius" Value="20"/>
-                                </Style>
-                            </TextBox.Resources>
-                            <TextBox.Background>
-                                <SolidColorBrush Color="White" Opacity="0.6"/>
-                            </TextBox.Background>
-                        </TextBox>
+                        </TextBlock>
 
                         <Image
                             x:Name="btnValorVencido"
-                            TouchDown="btnValorVencido_TouchDown"
+                            Margin="0,10,0,10"
+                            Height="50"
+                            TouchDown="btnFacturaVencida_TouchDown"
                             Grid.Row="2"
                             Source="/Images/Buttons/b-Aceptar.png" />
                     </Grid>
@@ -140,11 +143,9 @@
                     Tag="2"
                     Name="brd_facturaMes"
                     VerticalAlignment="Top"
-                    Margin="143,70,168,0"
-                    Height="200"
-                    Width="310"
+                    Margin="10,110,10,0"
                     Background="Transparent"
-                    MouseDown="Border_TouchDown" Grid.RowSpan="2">
+                    >
 
                 <Border
                         BorderBrush="#33D1FF"
@@ -156,6 +157,7 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
+                        <StackPanel>
                         <TextBlock
                                 Text="Factura del Mes"
                                 FontWeight="Bold"
@@ -165,67 +167,147 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Top"
                                 Height="50"/>
+                            <TextBlock
+                            Text="Estado: Activa"
+                            FontWeight="Bold"
+                            FontFamily="Nyriad Pro"
+                            FontSize="30" 
+                            Margin="0,10,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Height="50"/>
+                        </StackPanel>
                         <Image 
                                 Source="/Images/Others/img-split.png"
                                 VerticalAlignment="Top"
                                 Width="600"
                                 Margin="0,60,0,0" />
 
-                        <TextBox  
-                                Grid.Row="1"
-                                Text="********" 
-                                Tag= "{Binding stateAccount.FacturadoMes}"
+                                <!--Tag= "{Binding stateAccount.Facturado}"-->
+                        <TextBlock
+                            Grid.Row="1"
+                            Text="{Binding totalFacturasActivas}" 
+                            HorizontalAlignment="Center"
+                            Name="txt_facturaMes"
+                            FontSize="30" 
+                            Width="250"
+                            FontFamily="Myriad Pro"
+                            Foreground="Gray"
+                            VerticalAlignment="Center"
+                            TextAlignment="Center" 
+                            >
+                        </TextBlock>
+
+                        <Image
+                     Grid.Row="2"
+                        Height="50"
+                        Margin="0,10,0,10"
+                            x:Name="btnFacturaMes"
+                        Source="/Images/Buttons/b-Aceptar.png"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        TouchDown="btnFacturaActiva_TouchDown"/>
+                    </Grid>
+                </Border>
+            
+            </Grid>
+            
+            
+            <Grid
+                Grid.ColumnSpan="2"
+                Grid.Row="1"
+                    Tag="2"
+                    Name="brd_facturasTotal"
+                     HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Background="Transparent"
+                    >
+
+                <Border
+                        BorderBrush="#33D1FF"
+                        BorderThickness="2"
+                        CornerRadius="10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel>
+                        <TextBlock
+                                Text="Pago Total"
+                                FontWeight="Bold"
+                                FontFamily="Nyriad Pro"
+                                FontSize="40" 
+                                Margin="0,10,0,0"
                                 HorizontalAlignment="Center"
-                                Name="txt_facturaMes"
+                                VerticalAlignment="Top"
+                                Height="50"/>
+                            <!--<TextBlock
+                            Text="Estado: Activa"
+                            FontWeight="Bold"
+                            FontFamily="Nyriad Pro"
+                            FontSize="30" 
+                            Margin="0,10,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Height="50"/>-->
+                        </StackPanel>
+                        <Image 
+                                Source="/Images/Others/img-split.png"
+                                VerticalAlignment="Top"
+                                Width="600"
+                                Margin="0,60,0,0" />
+
+                                <!--Tag= "{Binding stateAccount.FacturadoMes}"-->
+                        <TextBlock
+                            Margin="10"
+                                Grid.Row="1"
+                                Text="{Binding totalFacturas}" 
+                                HorizontalAlignment="Center"
+                                Name="txt_facturasTotal"
                                 FontSize="30" 
                                 Width="250"
                                 FontFamily="Myriad Pro"
                                 Foreground="Gray"
                                 VerticalAlignment="Center"
-                                TextAlignment="Center" 
-                                IsReadOnly="True"
-                                MouseDown="txt_valor_TouchDown"
+                                TextAlignment="Center"
                             >
-                            <TextBox.Resources>
-                                <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius" Value="20"/>
-                                </Style>
-                            </TextBox.Resources>
-                            <TextBox.Background>
-                                <SolidColorBrush Color="White" Opacity="0.6"/>
-                            </TextBox.Background>
-                        </TextBox>
+                        </TextBlock>
 
                         <Image
-                     Grid.Row="2"
-                     x:Name="btnFacturaMes"
-                    Source="/Images/Buttons/b-Aceptar.png"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    TouchDown="btnFacturaMes_TouchDown"/>
+                            Grid.Row="2"
+                            Height="50"
+                            Margin="0,10,0,10"
+                            x:Name="btnFacturasTotal"
+                            Source="/Images/Buttons/b-Aceptar.png"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            TouchDown="btnFacturasTotal_TouchDown"/>
                     </Grid>
                 </Border>
+            
             </Grid>
 
 
 
-            <TextBlock
+            <!--<TextBlock
                     Text="Si desea, digite otro valor a Pagar"
                     FontWeight="Bold"
                     Foreground="#33D1FF"
                     FontFamily="Nyriad Pro"
                     FontSize="40" 
-                    Margin="306,247.536,306,898"
+                    Margin="0,0,0,400"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Height="50"
-                Grid.ColumnSpan="2" Grid.Row="1"/>
+                    Grid.ColumnSpan="2" Grid.Row="1"/>
 
 
             <TextBlock
                     Text="Valor a pagar"
                     FontSize="40"
-                    Margin="360,350.536,28,791"
+                    Margin="200,0,0,200"
                     Foreground="#33D1FF"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center" Grid.Row="1"
@@ -233,18 +315,16 @@
 
 
             <TextBox  
+                x:Name="txtVlrpago1"
                 Text="********" 
-                Tag="{Binding Amount}"
                 HorizontalAlignment="Center"
                 FontSize="30" 
-                Name="txt_total"
                 Width="300"
-                Margin="616,355.536,327,796"
+                Margin="220,0,0,200"
                 FontFamily="Myriad Pro"
                 Foreground="Gray"
                 VerticalAlignment="Center"
                 TextAlignment="Center" 
-                IsReadOnly="True"
                 MouseDown="txt_valor_TouchDown"
                 Grid.ColumnSpan="2" Grid.Row="1"
                 >
@@ -256,50 +336,33 @@
                 <TextBox.Background>
                     <SolidColorBrush Color="White" Opacity="0.6"/>
                 </TextBox.Background>
-            </TextBox>
+            </TextBox>-->
 
-
-
-            <Image
-                    Source="/Images/Buttons/b-Aceptar.png"
-                    Width="400"
+           <!--<Image
+                Source="/Images/Buttons/b-Aceptar.png"
+                Width="400"
                 Margin="422,459.536,421,610"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"    
                     MouseDown="txt_valorConsignacion_TouchDown"
                 Grid.ColumnSpan="2" Grid.Row="1" 
-                />
-
-
-
-
-            <!--<Image 
-                    Source="/images/buttons/b-Aceptar.png"
-                    MouseDown="btnContinue_TouchDown"
-                    Visibility="Hidden"
-                    Grid.Row="3"
-                    Width="350"
-                    Margin="0,200,0,0"
-                    x:Name="btnContinue"
-                    HorizontalAlignment="Center" 
-                    VerticalAlignment="Center" />-->
-
-
+                />-->
         </Grid>
 
         <Grid
             Grid.Row="2"
-            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Center"
             VerticalAlignment="Bottom"
-            Margin="-30,0,0,210">
+            Margin="0,0,0,200"
+            >
             <Image 
                 Source="/Images/Buttons/b-Salir.png"
                 MouseDown="btnMenu_TouchDown"
                 x:Name="btnMenu"
                 HorizontalAlignment="Center" 
                 VerticalAlignment="Bottom" 
-                Height="92"/>
+                Height="80"/>
         </Grid>
 
     </Grid>

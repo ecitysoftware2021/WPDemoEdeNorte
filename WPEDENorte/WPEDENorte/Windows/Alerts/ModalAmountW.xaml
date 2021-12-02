@@ -24,15 +24,29 @@
             <RowDefinition Height="230" />
             <RowDefinition Height="320" />
         </Grid.RowDefinitions>
-        <Grid Grid.ColumnSpan="2"  >
-            <TextBlock
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                TextAlignment="Center"
-                Text="Información"
-                FontSize="80"
-                FontWeight="SemiBold"                   
-            />
+        <Grid Grid.ColumnSpan="2" >
+            <StackPanel>
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Text="Información"
+                    FontSize="80"
+                    FontWeight="SemiBold"
+                    Margin="0,40,0,0"
+                />
+
+                <TextBlock
+                    Name="txtPagoParcialValido"
+                    Text="El valor ingresado no puede ser mayor al valor de la factura"
+                    FontSize="20"
+                    Foreground="IndianRed"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Visibility="Hidden"
+                />
+
+            </StackPanel>
         </Grid>
 
         <TextBlock 
@@ -51,15 +65,15 @@
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center" 
                 Margin="0,30,45,70"
-                Height="50"  
+                Height="70"  
                 Stretch="Uniform"
-                MouseDown="BtnCancel_TouchDown"
+                TouchDown="BtnCancel_TouchDown_1"
             />
         </Grid>
         <Grid Name="GridData" Grid.Row="1" Grid.ColumnSpan="2">
             <TextBlock
                 Name="txtMsInformacion"
-                Text="Ingrese el valor que desea consignar"
+                Text=""
                 FontSize="40"
                 Foreground="#606060"
                 VerticalAlignment="Top"
@@ -76,7 +90,7 @@
                 FontSize="37"
                 FontFamily="Arial" 
                 CaretBrush="#FFB2B0B8"
-                TextChanged="TxtVal_TextChanged"
+                TouchDown="txtval_TouchDown"
             />
             <TextBlock 
                 x:Name="TxtError"

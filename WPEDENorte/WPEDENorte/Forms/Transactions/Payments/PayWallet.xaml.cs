@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,65 +19,46 @@ using WPEDENorte.Windows.Alerts;
 
 namespace WPEDENorte.Forms.Transactions.Payments
 {
+
     /// <summary>
     /// Interaction logic for PayWallet.xaml
     /// </summary>
     public partial class PayWallet : Window
     {
-       
-        Facturas facturas = new Facturas();
+        List<Facturas> facturas = new List<Facturas>();
         private ObservableCollection<Background> fondo;
         private int num;
 
-        public PayWallet(Facturas datos)
+        public Decimal totalFacturasVencidas;
+        public Decimal totalFacturasActivas;
+        public Decimal totalFacturas;
+
+        public PayWallet(List<Facturas> listaTotalFacturas)
         {
-            facturas = datos;
+            this.facturas = listaTotalFacturas;
+
             InitializeComponent();
             fondo = new ObservableCollection<Background>();
             this.DataContext = fondo;
             num = 1;
             ChangeBackground();
 
-            try
-            {
-                datos.Valor = String.Format("RD {0:C0}", Convert.ToDecimal(datos.Valor));
-
-                this.GridData.DataContext = datos;
-            }
-            catch (Exception ex)
-            {
-            }
+            this.Opacity = 1;
         }
 
-        private void Border_TouchDown(object sender, MouseButtonEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void txt_valor_TouchDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void txt_valorConsignacion_TouchDown(object sender, MouseButtonEventArgs e)
-        {
-            ModalAmountW modalAmountW = new ModalAmountW(facturas);
-            modalAmountW.Show();
-        }
-
-        private void btnContinue_TouchDown(object sender, MouseButtonEventArgs e)
-        {
-            //decimal valor = Convert.ToDecimal(txtVlrpago.Text.Trim().Replace("RD $ ", "").Replace(",", "").Replace(".", ""));
-            //PayWindow pay = new PayWindow(valor);
-
-            //pay.Show();
-            //this.Close();
+            calcularTotalFacturasVencidas(facturas);
+            calcularTotalFacturasActivas(facturas);
+            calcularTotalFacturas(facturas);
         }
 
         private void btnMenu_TouchDown(object sender, MouseButtonEventArgs e)
         {
-
+            MenuWindow menuWindow = new MenuWindow();
+            menuWindow.Show();
         }
+
         private void ChangeBackground()
         {
             try
@@ -107,14 +89,98 @@ namespace WPEDENorte.Forms.Transactions.Payments
             }
         }
 
-        private void btnFacturaMes_TouchDown(object sender, TouchEventArgs e)
+        private void btnFacturaActiva_TouchDown(object sender, TouchEventArgs e)
         {
+            this.Opacity = 0.2;
 
+            ModalAmountW modalAmountW = new ModalAmountW(totalFacturasActivas.ToString(), "Activas");
+            modalAmountW.ShowDialog();
+            if (modalAmountW.DialogResult == true)
+            {
+                this.Opacity = 1;              
+            }
         }
 
-        private void btnValorVencido_TouchDown(object sender, TouchEventArgs e)
+        private void btnFacturaVencida_TouchDown(object sender, TouchEventArgs e)
         {
+            this.Opacity = 0.2;
 
+            ModalAmountW modalAmountW = new ModalAmountW(totalFacturasVencidas.ToString(), "Vencidas");
+            modalAmountW.ShowDialog();
+            if (modalAmountW.DialogResult == true)
+            {
+                this.Opacity = 1;
+            }
+        }
+
+        private void btnFacturasTotal_TouchDown(object sender, TouchEventArgs e)
+        {
+            this.Opacity = 0.2;
+
+            ModalAmountW modalAmountW = new ModalAmountW(totalFacturas.ToString(), "Total");
+            modalAmountW.ShowDialog();
+            if (modalAmountW.DialogResult == true)
+            {
+                this.Opacity = 1;
+            }
+        }
+
+        private void calcularTotalFacturasVencidas(List<Facturas> listaTotalFacturas)
+        {
+            totalFacturasVencidas = 0;
+
+            foreach (Facturas Factura in listaTotalFacturas)
+            {
+                if (EsFechaMayorQueHoy(Factura.Pague_Antes_De))
+                {
+                    totalFacturasVencidas += Convert.ToDecimal(Factura.Total_Pagar);
+                }
+            }
+
+            txt_valorVencido.Text = totalFacturasVencidas.ToString();
+        }
+
+        private void calcularTotalFacturasActivas(List<Facturas> listaTotalFacturas)
+        {
+            totalFacturasActivas = 0;
+
+            foreach (Facturas Factura in listaTotalFacturas)
+            {
+                if (!EsFechaMayorQueHoy(Factura.Pague_Antes_De))
+                {
+                    totalFacturasActivas += Convert.ToDecimal(Factura.Total_Pagar);
+                }
+            }
+
+            txt_facturaMes.Text = totalFacturasActivas.ToString();
+        }
+
+        private void calcularTotalFacturas(List<Facturas> listaTotalFacturas)
+        {
+            totalFacturas = 0;
+
+            foreach (Facturas Factura in listaTotalFacturas)
+            {
+                totalFacturas += Convert.ToDecimal(Factura.Total_Pagar);
+            }
+
+            txt_facturasTotal.Text = totalFacturas.ToString();
+        }
+
+        private Boolean EsFechaMayorQueHoy(string FechaString)
+        {
+            string dateFormat = "dd/MM/yyyy";
+
+            var Fecha = DateTime.ParseExact(FechaString, dateFormat, CultureInfo.InvariantCulture);
+
+            if (Fecha < DateTime.Now)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
