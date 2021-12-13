@@ -71,6 +71,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="200"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
 
         <Image Source="/Images/Buttons/b-salir.png"
@@ -113,5 +114,21 @@
                PreviewStylusDown="Image_PreviewStylusDown"
                />
         </materialDesign:TransitioningContent>
+
+        <Button x:Name="btnConexionDB"
+                Content="Probar conexion DB"  
+                Height="150" 
+                Width="200"
+                Grid.Column="0"
+                Grid.Row="2" 
+                TouchDown="btnConexionDB_TouchDown"/>
+
+        <Label x:Name="ResultadoConexionDB"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Grid.Column="1"
+               Grid.Row="2"/>
+
+
     </Grid>
 </Window>
