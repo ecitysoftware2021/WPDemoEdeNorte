@@ -81,7 +81,8 @@
                Name="BtnHome"
                Margin="0,20,20,0"
                Width="250"
-               PreviewStylusDown="BtnHome_PreviewStylusDown"/>
+               PreviewStylusDown="BtnHome_PreviewStylusDown"
+               TouchDown="BtnHome_TouchDown"/>
     
         <materialDesign:TransitioningContent
             OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:1.2}"
@@ -115,20 +116,7 @@
                />
         </materialDesign:TransitioningContent>
 
-        <Button x:Name="btnConexionDB"
-                Content="Probar conexion DB"  
-                Height="150" 
-                Width="200"
-                Grid.Column="0"
-                Grid.Row="2" 
-                TouchDown="btnConexionDB_TouchDown"/>
-
-        <Label x:Name="ResultadoConexionDB"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center"
-               Grid.Column="1"
-               Grid.Row="2"/>
-
+       
 
     </Grid>
 </Window>

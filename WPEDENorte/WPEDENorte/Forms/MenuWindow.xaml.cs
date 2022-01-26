@@ -77,25 +77,9 @@ namespace WPEDENorte.Forms
             }
         }
 
-        private void btnConexionDB_TouchDown(object sender, TouchEventArgs e)
+        private void  BtnHome_TouchDown(object sender, TouchEventArgs e)
         {
-            using (var conexion = new EDENorteBDEntities())
-            {
-                if (conexion.Database.Exists())
-                {
-                    btnConexionDB.Content = "Conexion BD exitosa.";
-
-                    string consultaFacturasCliente = "SELECT * FROM Tbl_Facturas WHERE Ref_Pago = '8142014144'";
-
-                    var registrosTabla = conexion.Tbl_Facturas.SqlQuery(consultaFacturasCliente).ToList().Count;
-
-                    ResultadoConexionDB.Content = "Resgistros: " + registrosTabla;
-                }
-                else
-                {
-                    btnConexionDB.Content = "Conexion BD fallida.";
-                }
-            }
+            Application.Current.Shutdown();
         }
     }
 }

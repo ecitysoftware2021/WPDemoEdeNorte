@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <appSettings>
+    <add key="LogoComprobante" value="D:\GitHub\WPDemoEdeNorte\WPEDENorte\WPEDENorte\Images\Others\logo1.png" />
+    <!--BEGIN PUERTOS DE LOS PERIFÉRICOS________________________________________________________________________________________________________________________________-->
+    <add key="PortBills" value="COM3" />
+    <!--Aceptance-->
+    <add key="PortCoins" value="COM10" />
+    <!--Monederos-->
+    <!--END PUERTOS DE LOS PERIFÉRICOS__________________________________________________________________________________________________________________________________-->
+    <add key="basseAddressLocal" value="https://e-ecity.online/"/>
+    <!--BEGIN APIControllers______________________________________________________________________________________________________________________________________________-->
+    <add key="ValidateDispenser" value="/api/Administrator/ValidateMoneyDispenser"/>
+    <add key="GetToken" value="Authentication/Authenticate"/>
+    <add key="InitPaypad" value="PayPadAdministrator/InitPaypad"/>
+    <add key="SaveLog" value="PayPadAdministrator/SaveLog"/>
+    <add key="SaveLogError" value="PayPadAdministrator/SaveErrorLog"/>
+    <add key="SaveLogDevice" value="PayPadAdministrator/SaveLogDevice"/>
+    <add key="SaveTransaction" value="PayPadAdministrator/SaveTransaction"/>
+    <add key="UpdateTransaction" value="PayPadAdministrator/UpdateTransaction"/>
+    <add key="ValidateDispenserAmount" value="PayPadAdministrator/ValidateDispenserAmount"/>
+    <add key="SaveTransactionDetail" value="PayPadAdministrator/SaveTransactionDetail"/>
+    <!--END APIControllers____-->
+  </appSettings>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1" />
+    </startup>
+<connectionStrings><add name="EDENorteBDEntities" connectionString="metadata=res://*/LocalBD.EDENorteADO.csdl|res://*/LocalBD.EDENorteADO.ssdl|res://*/LocalBD.EDENorteADO.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\LocalBD\EDENorteBD.mdf;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" /></connectionStrings></configuration>
