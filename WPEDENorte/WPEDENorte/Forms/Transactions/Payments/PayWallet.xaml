@@ -13,7 +13,7 @@
              d:DesignWidth="1080"
             Loaded="Window_Loaded"
         >
-    <Grid >
+    <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Images/Background/f-menu.jpg"/>
         </Grid.Background>
@@ -65,7 +65,7 @@
                 VerticalAlignment="Top"
                 Grid.ColumnSpan="2"
                 Height="50"/>
-            
+
             <Grid
                     Tag="1"
                     Name="brd_valorVencido"
@@ -87,7 +87,7 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <StackPanel>
-                        <TextBlock
+                            <TextBlock
                             Text="Factura 23/10/2021"
                             FontWeight="Bold"
                             FontFamily="Nyriad Pro"
@@ -112,7 +112,7 @@
                             Width="600"
                             Margin="0,60,0,0" />
 
-                                <!--Tag= "{Binding stateAccount.SaldoVencido}"-->
+                        <!--Tag= "{Binding stateAccount.SaldoVencido}"-->
                         <TextBlock
                             Grid.Row="1"
                                 Text="" 
@@ -139,6 +139,78 @@
             </Grid>
 
             <Grid
+                Tag="1"
+                Name="brd_Abonopago"
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                VerticalAlignment="Bottom"
+                Background="Transparent"
+                HorizontalAlignment="Center"
+                Margin="0,0,0,0"
+                IsEnabled="True">
+                <Border
+                        BorderBrush="#33D1FF"
+                        BorderThickness="2"
+                        CornerRadius="10"
+                        >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel>
+                            <TextBlock
+                            Text="Abono factura" 
+                            FontWeight="Bold"
+                            FontFamily="Nyriad Pro"
+                            FontSize="40" 
+                            Margin="160,10,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Height="50"/>
+                            <TextBlock
+                            Text="Abono maximo a la factura"
+                            FontWeight="Bold"
+                            FontFamily="Nyriad Pro"
+                            FontSize="30" 
+                            Margin="0,10,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Height="50"/>
+                        </StackPanel>
+                        <Image 
+                            Source="/Images/Others/img-split.png"
+                            VerticalAlignment="Top"
+                            Width="600"
+                            Margin="0,60,0,0" />
+
+                        <TextBlock
+                            Grid.Row="1"
+                                Text="" 
+                                HorizontalAlignment="Center"
+                                Name="txt_Abonopago"
+                                FontSize="30" 
+                                Width="250"
+                                FontFamily="Myriad Pro"
+                                Foreground="Gray"
+                                VerticalAlignment="Center"
+                                TextAlignment="Center" Margin="175,2,175,68" Grid.RowSpan="2"
+                                >
+                        </TextBlock>
+
+                        <Image
+                            x:Name="btnValorAbono"
+                            Margin="0,10,0,10"
+                            Height="50"
+                            TouchDown="btnValorAbono_TouchDown"
+                            Grid.Row="2"
+                            Source="/Images/Buttons/b-Aceptar.png" />
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <Grid
                 Grid.Column="1"
                     Tag="2"
                     Name="brd_facturaMes"
@@ -158,7 +230,7 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <StackPanel>
-                        <TextBlock
+                            <TextBlock
                                 Text="Factura del Mes"
                                 FontWeight="Bold"
                                 FontFamily="Nyriad Pro"
@@ -183,7 +255,7 @@
                                 Width="600"
                                 Margin="0,60,0,0" />
 
-                                <!--Tag= "{Binding stateAccount.Facturado}"-->
+                        <!--Tag= "{Binding stateAccount.Facturado}"-->
                         <TextBlock
                             Grid.Row="1"
                             Text="{Binding totalFacturasActivas}" 
@@ -209,10 +281,10 @@
                         TouchDown="btnFacturaActiva_TouchDown"/>
                     </Grid>
                 </Border>
-            
+
             </Grid>
-            
-            
+
+
             <Grid
                 Grid.ColumnSpan="2"
                 Grid.Row="1"
@@ -226,7 +298,7 @@
                 <Border
                         BorderBrush="#33D1FF"
                         BorderThickness="2"
-                        CornerRadius="10">
+                        CornerRadius="10" Margin="0,-48,0,48">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -234,12 +306,12 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <StackPanel>
-                        <TextBlock
+                            <TextBlock
                                 Text="Pago Total"
                                 FontWeight="Bold"
                                 FontFamily="Nyriad Pro"
                                 FontSize="40" 
-                                Margin="0,10,0,0"
+                                Margin="201,10,201,0"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Top"
                                 Height="50"/>
@@ -259,7 +331,7 @@
                                 Width="600"
                                 Margin="0,60,0,0" />
 
-                                <!--Tag= "{Binding stateAccount.FacturadoMes}"-->
+                        <!--Tag= "{Binding stateAccount.FacturadoMes}"-->
                         <TextBlock
                             Margin="10"
                                 Grid.Row="1"
@@ -286,7 +358,7 @@
                             TouchDown="btnFacturasTotal_TouchDown"/>
                     </Grid>
                 </Border>
-            
+
             </Grid>
 
 
@@ -338,7 +410,7 @@
                 </TextBox.Background>
             </TextBox>-->
 
-           <!--<Image
+            <!--<Image
                 Source="/Images/Buttons/b-Aceptar.png"
                 Width="400"
                 Margin="422,459.536,421,610"

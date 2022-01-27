@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WPEDENorte.exe" size="3501016">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WPEDENorte.exe" size="3504088">
       <assemblyIdentity name="WPEDENorte" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qFh2SAW2CO7FwRt8eFSr+P37TqqaePPtnWMyChHdWi0=</dsig:DigestValue>
+        <dsig:DigestValue>hWmKyyGpFh8wrN5l2eoRff9br/9PF+EDSAOGBaCG8jg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

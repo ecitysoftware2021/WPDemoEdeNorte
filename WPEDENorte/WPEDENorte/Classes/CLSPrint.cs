@@ -17,6 +17,8 @@ namespace WPEDENorte.Classes
         public string ValorDevuelto { get; set; }
         public string Valor { get; set; }
 
+        public string Valortotal { get; set; }
+
         private SolidBrush sb;
         private Font fTitles;
         private Font fGIBTitles;
@@ -75,8 +77,11 @@ namespace WPEDENorte.Classes
                 g.DrawString("Estado:", fTitles, sb, 10, y += sum);
                 g.DrawString(Estado, fContent, sb, x, y);
 
-                g.DrawString("Valor:", fTitles, sb, 10, y += sum);
+                g.DrawString("Valor Pagado:", fTitles, sb, 10, y += sum);
                 g.DrawString(Valor, fContent, sb, x, y);
+
+                g.DrawString("Valor Total:", fTitles, sb, 10, y += sum);
+                g.DrawString(Valortotal, fContent, sb, x, y);
 
                 g.DrawString("========================================", fContent, sb, 10, y += sum);
 

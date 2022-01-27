@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WPEDENorte.Classes;
+
 
 namespace WPEDENorte.Classes
 {
+    
+
+
     public class Facturas
     {
+        
+
         public string Id { get; set; }
         public string Factura { get; set; }
         public string Ref_Pago { get; set; }
@@ -19,5 +26,9 @@ namespace WPEDENorte.Classes
         public string RNC_Cliente { get; set; }
         public string Total_Pagar { get; set; }
         public string Contrato { get; set; }
+
+        public string Abono_pago { get; set; }
+
+      
     }
 }

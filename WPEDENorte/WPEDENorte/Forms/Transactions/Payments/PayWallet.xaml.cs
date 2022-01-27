@@ -28,10 +28,15 @@ namespace WPEDENorte.Forms.Transactions.Payments
         List<Facturas> facturas = new List<Facturas>();
         private ObservableCollection<Background> fondo;
         private int num;
+        public Utilities utilities;
+        
+       
 
         public Decimal totalFacturasVencidas;
         public Decimal totalFacturasActivas;
         public Decimal totalFacturas;
+        private string ValorTotal;
+        public Decimal totalAbono;
 
         public PayWallet(List<Facturas> listaTotalFacturas)
         {
@@ -42,7 +47,7 @@ namespace WPEDENorte.Forms.Transactions.Payments
             this.DataContext = fondo;
             num = 1;
             ChangeBackground();
-
+            
             this.Opacity = 1;
         }
 
@@ -51,6 +56,10 @@ namespace WPEDENorte.Forms.Transactions.Payments
             calcularTotalFacturasVencidas(facturas);
             calcularTotalFacturasActivas(facturas);
             calcularTotalFacturas(facturas);
+            calcularAbonoFacturas(facturas);
+            utilities = new Utilities();
+
+
         }
 
         private void btnMenu_TouchDown(object sender, MouseButtonEventArgs e)
@@ -125,6 +134,17 @@ namespace WPEDENorte.Forms.Transactions.Payments
             }
         }
 
+        private void btnValorAbono_TouchDown(object sender,TouchEventArgs e)
+        {
+            this.Opacity = 0.2;
+            ModalAmountW modalAmountW = new ModalAmountW(totalAbono.ToString(), "Activas");
+           modalAmountW.ShowDialog();
+            if(modalAmountW.DialogResult==true)
+            {
+                this.Opacity = 1;
+            }
+        }
+
         private void calcularTotalFacturasVencidas(List<Facturas> listaTotalFacturas)
         {
             totalFacturasVencidas = 0;
@@ -136,9 +156,11 @@ namespace WPEDENorte.Forms.Transactions.Payments
                     totalFacturasVencidas += Convert.ToDecimal(Factura.Total_Pagar);
                 }
             }
-
+            
             txt_valorVencido.Text = totalFacturasVencidas.ToString();
         }
+
+        
 
         private void calcularTotalFacturasActivas(List<Facturas> listaTotalFacturas)
         {
@@ -152,8 +174,25 @@ namespace WPEDENorte.Forms.Transactions.Payments
                 }
             }
 
-            txt_facturaMes.Text = totalFacturasActivas.ToString();
+           txt_facturaMes.Text = totalFacturasActivas.ToString();
+
         }
+
+        private void calcularAbonoFacturas(List<Facturas> listaTotalFacturas)
+        {
+            totalAbono = 0;
+           
+
+            foreach (Facturas Factura in listaTotalFacturas)
+            {
+                
+                    totalAbono += Convert.ToDecimal(Factura.Total_Pagar);
+                Utilities.valortotal = Convert.ToDecimal(totalAbono);
+            }
+
+            txt_Abonopago.Text = totalAbono.ToString();
+            
+        } 
 
         private void calcularTotalFacturas(List<Facturas> listaTotalFacturas)
         {
@@ -162,10 +201,23 @@ namespace WPEDENorte.Forms.Transactions.Payments
             foreach (Facturas Factura in listaTotalFacturas)
             {
                 totalFacturas += Convert.ToDecimal(Factura.Total_Pagar);
+                Utilities.valortotal = Convert.ToDecimal(totalFacturas);
             }
 
             txt_facturasTotal.Text = totalFacturas.ToString();
+           
+           
         }
+
+        private void SumaCuentas()
+        {
+            
+            calcularTotalFacturasActivas(facturas);
+            calcularTotalFacturasVencidas(facturas);
+            ;
+
+        }
+
 
         private Boolean EsFechaMayorQueHoy(string FechaString)
         {
@@ -182,5 +234,7 @@ namespace WPEDENorte.Forms.Transactions.Payments
                 return true;
             }
         }
+
+
     }
 }

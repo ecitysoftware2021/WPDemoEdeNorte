@@ -23,6 +23,8 @@ namespace WPEDENorte.Classes
         public static decimal PayVal { get; set; }
         public static decimal DispenserVal { get; set; }
         public static decimal EnterTotal { get; set; }
+
+        public static decimal valortotal { get; set; }
         public static ControlPeripherals control;
         #endregion
 
@@ -183,6 +185,8 @@ namespace WPEDENorte.Classes
                 objPrint.Fecha = DateTime.Now.ToString("yyyy-MM-dd");
                 objPrint.Hora = DateTime.Now.ToString("hh:mm:ss");
                 objPrint.Valor = String.Format("{0:C0}", PayVal);
+                objPrint.Valortotal = String.Format("{0:C0}", valortotal);
+                
                 //objPrint.ValorIngresado = String.Format("{0:C0}", 2000);
                 //objPrint.ValorDevuelto = String.Format("{0:C0}", 2000);
 

@@ -49,7 +49,7 @@ namespace WPEDENorte.Forms
             try
             {
                 //this.value = 22000;
-                Utilities.PayVal = Utilities.RoundValue(value); 
+                Utilities.PayVal = Utilities.RoundValue(value);
                 OrganizeValues();
                 frmLoading = new ModalWindow("", true);
                 utilities = new Utilities();
